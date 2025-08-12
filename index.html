@@ -439,6 +439,20 @@
   }
 }
 setInterval(draw, 35);
+// Visit Counter
+if (!localStorage.getItem('visits')) {
+  localStorage.setItem('visits', 0);
+}
+let visits = parseInt(localStorage.getItem('visits')) + 1;
+localStorage.setItem('visits', visits);
+document.getElementById('visit-counter').innerText = visits;
+
+// Language Switcher
+function switchLanguage() {
+    alert('Switching to English version...');
+    // Aquí podrías redirigir a una versión en inglés del CV
+}
 </script>
 </body>
+
 </html>
