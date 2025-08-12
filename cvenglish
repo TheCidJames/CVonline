@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV ESP - Luis Yapura</title>
+    <title>CV ENG - Luis Yapura</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
@@ -30,6 +30,7 @@
             border: 1px solid #0f0;
             box-shadow: 0 0 20px #0f0;
         }
+		
         h1 { 
             color: #00ff88; 
             font-size: 2.5rem; /            
@@ -43,6 +44,7 @@
             border-bottom: 1.5px solid #424242; /* gray-400 */
             padding-bottom: 0.4rem;
         }
+		
         h3 { /* Job titles, Education institution, Certificate groups */
             color: #00ff88; /* gray-700 */
             font-size: 1.3rem; /* Adjusted for A4 */
@@ -54,7 +56,8 @@
             color: #00ff88; /* gray-700 */
             font-size: 1.1rem; /* Adjusted for A4 */
             font-weight: 600;
-        }
+		}
+		   
         .section-content {
             margin-bottom: 1rem; /* Adjusted for A4 */
 			font-size: 1rem;
@@ -99,7 +102,7 @@
              font-size: 1.1 rem; /* Adjusted for A4 */
              font-weight: 600;
         }
-        .company-date {
+		.company-date {
             font-style: italic;
             color: #ffffff; /* gray-600 */
             font-size: 0.85rem; /* Adjusted for A4 */
@@ -120,19 +123,23 @@
             padding: 1.5rem; /* Adjusted for A4 */
             border-radius: 0.3rem; /* rounded-lg */
             margin-bottom: 1.5rem;
+			border: 1px solid #0f0;
+            box-shadow: 0 0 20px #0f0;
         }
         .header-main-section p.text-xl {
             font-size: 1.2rem; /* Adjusted for A4 */
-        }
+		}
          .header-main-section p.text-sm {
             font-size: 0.95rem; /* Adjusted for A4 */
-        }
+	     }
 
         .sidebar-section {
             background-color: #2a2a2a;
             padding: 1rem;
             border-radius: 0.3rem;
             margin-bottom: 1rem;
+			border: 1px solid #0f0;
+            box-shadow: 0 0 20px #0f0;
         }
         .sidebar-section h2 {
             font-size: 1.2rem;
@@ -165,26 +172,71 @@
                 grid-column: 2 / 3;
             }
         }
-          .matrix-rain {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: -1;
-}
-
+        .matrix-rain {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			pointer-events: none;
+			z-index: -1;
+		}
+		.menu {
+			position: fixed;
+			top: 1rem;
+			right: 1rem;
+			/* background: rgba(0, 0, 0, 0.5); */
+			backdrop-filter: blur(1px);
+			/* padding: 0.5rem 1rem; */
+			border-radius: 0.5rem;
+			z-index: 50;
+		}
+		.menu ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
+		.menu li {
+			margin-bottom: 0.5rem;
+		}
+		.menu a {
+			display: inline-block;
+			background: linear-gradient(135deg, #00ff88, #00ffaa);
+			color: #000;
+			font-weight: bold;
+			padding: 0.5rem 1rem;
+			border-radius: 9999px;
+			box-shadow: 0 0 10px rgba(0,255,170,0.6);
+			transition: transform 0.2s ease, box-shadow 0.2s ease;
+		}
+		.menu a:hover {
+			transform: scale(1.3);
+			box-shadow: 0 0 15px rgba(0,255,170,0.9);
+		}
+		footer {
+			text-align: center;
+			padding: 1rem;
+			font-size: 1.2rem;
+			font-weight: bold;
+			color: #0f0;
+			border-top: 2px solid #0f0;
+			margin-top: 2rem;
+		}
     </style>
 </head>
 <body> 
 <canvas class="matrix-rain"></canvas>
-
+<div class="menu" align="center">
+  <ul>
+    <li><a href="#" onclick="switchLanguage()">English Version</a></li>
+    <li><a href="cv.pdf" download>Download PDF</a></li>
+  </ul>
+</div>
     <main class="md:col-span-3">
 <div class="container"> <header class="header-main-section text-center md:text-left">
             <div>
                 <h1 class="text-3xl md:text-4xl font-bold">Luis Yapura</h1>
-                <p class="text-xl font-medium mt-3">Analista en Sistemas</p>
+                <p class="text-xl font-medium mt-3">Systems Analyst</p>
 				<p class="text-xl font-medium mt-3">CyberSecurity Analyst | CEH</p>
                 <p class="text-sm mt-2">Córdoba, Argentina | M.P.: 3437 CPCI</p>
             </div>
@@ -193,85 +245,85 @@
         <div class="grid-container">
             <main class="main-content">
                 <section class="section-content">
-                    <h2>Perfil Profesional</h2>
+                    <h2>Professional Profile</h2>
                     <p class="description">
-                        Analista en sistemas y especialista en ciberseguridad con experiencia en hacking ético, auditorías de seguridad, y administración de sistemas y bases de datos. Demostrada competencia en entornos Linux y Windows, virtualización, y sistemas ERP. Apasionado en la identificación y mitigación de vulnerabilidades, respuesta a incidentes y capacitación técnica. Busco aplicar mis conocimientos y pasión por la tecnología para contribuir a proyectos innovadores en el ámbito de la ciberseguridad por lo cual actualmente me encuentro capacitando en un Master Internacional de Ciberseguridad de la mano de el Campus Internacional en Ciberseguridad y la Universidad Catolica San Antonia de Murcia.
+                        Systems analyst and cybersecurity specialist with experience in ethical hacking, security audits, and systems and database administration. Proven competence in Linux and Windows environments, virtualization, and ERP systems. Passionate about identifying and mitigating vulnerabilities, incident response, and technical training. I am looking to apply my knowledge and passion for technology to contribute to innovative projects in the field of cybersecurity, which is why I am currently studying for an International Master's in Cybersecurity at Campus Internacional de Ciberseguridad and the Catholic University of San Antonio de Murcia.
                     </p>
                 </section>
 
                 <section class="section-content">
-                    <h2>Experiencia Laboral</h2>
+                    <h2>Work Experience</h2>
                     <div class="mb-6">
-                        <h3 class="job-title-main">Analista en Ciberseguridad - Especialista IT</h3>
+                        <h3 class="job-title-main">Cybersecurity Analyst - IT Specialist</h3>
                         <p class="company-date">Cointech, Córdoba, Argentina | 2022 – 2025</p>
                         <ul class="list-disc pl-5 space-y-1 mt-2">
-                            <li>Análisis y fortalecimiento de la seguridad de la red interna.</li>
-                            <li>Implementación de controles preventivos y monitorización activa de la infraestructura.</li>
-                            <li>Implementación de entornos de virtualización.</li>
-                            <li>Implementación y mantenimiento de IBM QRadar (SIEM).</li>
-                            <li>Implementación de bases de datos Oracle, asegurando integridad y confidencialidad.</li>
-                            <li>Diseño e implementación de políticas de seguridad alineadas con ISO 27001.</li>
-                            <li>Respuesta a incidentes, análisis de vulnerabilidades y desarrollo de scripts para automatización de auditorías.</li>
-                            <li>Capacitación interna en mejores prácticas de seguridad.</li>
-                            <li>Administración y optimización de dispositivos de red y firewalls.</li>
+                            <li>Analysis and strengthening of internal network security.</li>
+                            <li>Implementation of preventive controls and active monitoring of infrastructure.</li>
+                            <li>Implementation of virtualization environments.</li>
+                            <li>Implementation and maintenance of IBM QRadar (SIEM).</li>
+                            <li>Implementation of Oracle databases, ensuring integrity and confidentiality.</li>
+                            <li>Design and implementation of security policies aligned with ISO 27001.</li>
+                            <li>Incident response, vulnerability analysis, and development of scripts for audit automation.</li>
+                            <li>Internal training on security best practices.</li>
+                            <li>Administration and optimization of network devices and firewalls.</li>
 						</ul>
                     </div>
                     <div class="mb-6">
-                        <h3 class="job-title-main">Analista Funcional</h3>
+                        <h3 class="job-title-main">Functional Analyst</h3>
                         <p class="company-date">DLR Software, Córdoba, Argentina | 2020 – 2021</p>
                         <ul class="list-disc pl-5 space-y-1 mt-2">
-                            <li>Implementación de sistemas ERP y módulos personalizados; mantenimiento de BBDD y software.</li>
-                            <li>Capacitación técnica y contable a clientes; asistencia remota y presencial.</li>
-                            <li>Análisis de requerimientos, elaboración de documentación técnica y validación funcional.</li>
-							<li>Configuración y mantenimiento de redes, Active Directory y entornos de virtualización.</li>
-							<li>Diseño de funciones personalizadas para sistemas empresariales.</li>
-							<li>Montado y configuración de redes virtuales.</li>
-							<li>Elaboración de documentación técnica, incluyendo especificaciones funcionales y casos de uso.</li>
-							<li>Coordinación con equipos de desarrollo para implementación de solucione.</li>
-							<li>Validación y pruebas funcionales de sistemas para asegurar calidad del software.</li>
+                            <li>Implementation of ERP systems and custom modules; maintenance of databases and software.</li>
+                            <li>Technical and accounting training for clients; remote and in-person assistance.</li>
+                            <li>Requirements analysis, technical documentation, and functional validation.</li>
+                            <li>Configuration and maintenance of networks, Active Directory, and virtualization environments.</li>
+                            <li>Design of custom functions for business systems.</li>
+                            <li>Setup and configuration of virtual networks.</li>
+                            <li>Preparation of technical documentation, including functional specifications and use cases.</li>
+                            <li>Coordination with development teams for solution implementation.</li>
+                            <li>Validation and functional testing of systems to ensure software quality.</li>
                         </ul>
                     </div>
                     <div class="mb-6">
-                        <h3 class="job-title-main">Analista en Sistema - Programador Web</h3>
-                        <p class="company-date">Profesional Independiente, Argentina | 2016 – 2025</p>
+                        <h3 class="job-title-main">Systems Analyst - Web Programmer</h3>
+                        <p class="company-date">Independent Professional, Argentina | 2016 – 2025</p>
                         <ul class="list-disc pl-5 space-y-1 mt-2">
-                            <li>Desarrollo de software a medida (Pascal, Delphi); creación y diseño web.</li>
-                            <li>Soporte técnico, armado de PC y mantenimiento preventivo.</li>
-							<li>Mantenimiento Preventivo.</li>
-							<li>Instalacion de Software Web Drupal, WordPreess, Joomla, Moodle.</li>
-							<li>Manejo y diseño de base de datos relacionales</li>
-                            <li>Implementacion y Configuracion de servidores Web, Webmail.</li>
-							<li>Instalacion de Base de datos en Amazon Web Service (RDS.)</li>
-							<li>Implementacion de distintos servidores y configuracion en EC2.</li>
-							<li>Controles de Acceso, Cigrado, Proteccion de Datos y Configuracion de VPC.</li>
-                            <li>Gestion de Identidades.</li>
-							<li>Conocimientos Basicos en  AWS CloudTrail y Amazon Macie.</li>
-							<li>Configuración y administracion de dominios</li>
+                            <li>Custom software development (Pascal, Delphi); web creation and design.</li>
+                            <li>Technical support, PC assembly, and preventive maintenance.</li>
+                            <li>Preventive Maintenance.</li>
+                            <li>Installation of Web Software Drupal, WordPress, Joomla, Moodle.</li>
+                            <li>Management and design of relational databases.</li>
+                            <li>Implementation and Configuration of Web, Webmail servers.</li>
+                            <li>Installation of Databases in Amazon Web Service (RDS.)</li>
+                            <li>Implementation of different servers and configuration in EC2.</li>
+                            <li>Access Controls, Cigrado, Proteccion de Datos y Configuracion de VPC.</li>
+                            <li>Identity Management.</li>
+                            <li>Basic knowledge in AWS CloudTrail and Amazon Macie.</li>
+                            <li>Configuration and administration of domains.</li>
                         </ul>
                     </div>
                      <div>
-                        <h3 class="job-title-main">Soporte Técnico</h3>
+                        <h3 class="job-title-main">Technical Support</h3>
                         <p class="company-date">HVA Informática, Jujuy, Argentina | 2012 – 2016</p>
                         <ul class="list-disc pl-5 space-y-1 mt-2">
-                            <li>Mantenimiento de infraestructura, armado de PC y soporte técnico.</li>
-                            <li>Configuración de redes y atención al cliente.</li>
-							<li>Soporte técnico para instalación y configuración de hardware y software.</li>
+                            <li>Infrastructure maintenance, PC assembly, and technical support.</li>
+                            <li>Network configuration and customer service.</li>
+                            <li>Technical support for hardware and software installation and configuration.</li>
                         </ul>
                     </div>
                 </section>
 
                 <section class="section-content">
-                    <h2>Lista de Cursos y Certificados</h2>
+                    <h2>List of Courses and Certificates</h2>
 					
-					<h3 class="mt-4">Universidad Tecnológica Nacional, Facultad Regional Buenos Aires</h3>
+					<h3 class="mt-4">National Technological University, Buenos Aires Regional Faculty</h3>
                     <ul class="list-disc pl-5 space-y-1 mt-2">
-                        <li>Experto Universitario en Hacking Ético (Ethical Hacking)</li>
+                        <li>University Expert in Ethical Hacking</li>
                     </ul>
                     
-					<h3 class="mt-4">Campus Internaciona de Ciberseguridad</h3>
+					<h3 class="mt-4">International Cybersecurity Campus</h3>
                     <ul class="list-disc pl-5 space-y-1 mt-2">
-                        <li>Ciberseguridad Avanzada y defensa integral de Sistema</li>
-                        <li>Analista de Ciberinteligencia OSINT e Investigacion Digital</li>
+                        <li>Advanced Cybersecurity and Comprehensive Systems Defense</li>
+                        <li>OSINT Cyberintelligence and Digital Investigation Analyst</li>
                     </ul>
 					
 					<h3 class="mt-4">Cisco U</h3>
@@ -282,17 +334,17 @@
 					
                     <h3 class="mt-4">Cisco Networking Academy</h3>
                     <ul class="list-disc pl-5 space-y-1 mt-2">
-                        <li>Introducción a la Ciberseguridad</li>
-                        <li>Hacker Ético</li>
+                        <li>Introduction to Cybersecurity</li>
+                        <li>Ethical Hacker</li>
                         <li>Introduction to Modern AI</li>
                         <li>Operating Systems Basics</li>
-                        <li>Conceptos básicos de redes</li>
-						<li>Linux Essentials</li>                     
+                        <li>Basic Networking Concepts</li>                     
+                        <li>Linux Essentials</li>                     
                         <li>Linux 1</li>
                         <li>Linux 2</li>
-                        <li>Carrera Profesional de Analista Junior en Ciberseguridad</li>
-                        <li>Soporte y seguridad de red (Completed May 19, 2025)</li>
-                        <li>Conectividad IP (Cisco CCNA)</li>
+                        <li>Junior Cybersecurity Analyst Professional Career</li>
+                        <li>Network Support and Security (Completed May 19, 2025)</li>
+                        <li>IP Connectivity (Cisco CCNA)</li>
                     </ul>
 
                     <h3 class="mt-4">Fortinet Training Institute</h3>
@@ -315,76 +367,75 @@
                         <li>Python</li>
                     </ul>
 
-                    <h3 class="mt-4">Otros</h3>
+                    <h3 class="mt-4">Other</h3>
                     <ul class="list-disc pl-5 space-y-1 mt-2">
-                        <li>Introducción a la IA (Completed course on ChatGPT, GPTs Personalizados, and Make)</li>
-                        <li>Aprende a usar la línea de comandos de Linux</li>
+                        <li>Introduction to AI (Completed course on ChatGPT, Custom GPTs, and Make)</li>
+                        <li>Learn to use the Linux command line</li>
                         <li>Career Essentials in Cybersecurity by Microsoft and LinkedIn</li>
-                        <li>Ciberseguridad: Herramientas y monitoreo en la gestión de incidentes</li>
-                        <li>Ciberseguridad: Implementar procesos de gestión de incidentes</li>
-                        <li>Cisco CCNA Prep. Cert.: Introducción</li>
-                        <li>Concienciación en ciberseguridad: Terminología de ciberseguridad</li>
+                        <li>Cybersecurity: Tools and monitoring in incident management</li>
+                        <li>Cybersecurity: Implementing incident management processes</li>
+                        <li>Cisco CCNA Prep. Cert.: Introduction</li>
                         <li>Cybersecurity Awareness: Cybersecurity Terminology</li>
                         <li>Cybersecurity Foundations</li>
                         <li>Cybersecurity Foundations: Security Architecture</li>
                         <li>Cybersecurity Upskilling: A Practical Guide to LinkedIn Learning's Cybersecurity Framework</li>
-                        <li>DevOps esencial</li>
-                        <li>Especialista en seguridad de la información</li>
+                        <li>Essential DevOps</li>
+                        <li>Information Security Specialist</li>
                         <li>Ethical Hacking: Introduction to Ethical Hacking</li>
-                        <li>Fundamentos de ciberseguridad</li>
-                        <li>Fundamentos de la ciberseguridad: Computador corporativo</li>
-                        <li>Fundamentos de la ciberseguridad: Computador empresarial</li>
-                        <li>Fundamentos de la ciberseguridad para profesionales IT</li>
-                        <li>Fundamentos de la ciberseguridad: Redes</li>
-                        <li>Fundamentos de la ciberseguridad: Sistemas operativos</li>
-                        <li>Ingeniería social para IT</li>
-                        <li>Introducción a AWS: Seguridad</li>
-                        <li>Introducción a la ciberseguridad para usuarios</li>
-                        <li>Introducción a la ISO 27000 y sus estándares de seguridad de la información</li>
+                        <li>Fundamentals of Cybersecurity</li>
+                        <li>Fundamentals of Cybersecurity: Corporate Computer</li>
+                        <li>Fundamentals of Cybersecurity: Business Computer</li>
+                        <li>Fundamentals of Cybersecurity for IT Professionals</li>
+                        <li>Fundamentals of Cybersecurity: Networks</li>
+                        <li>Fundamentals of Cybersecurity: Operating Systems</li>
+                        <li>Social Engineering for IT</li>
+                        <li>Introduction to AWS: Security</li>
+                        <li>Introduction to Cybersecurity for Users</li>
+                        <li>Introduction to ISO 27000 and its information security standards</li>
                         <li>Microsoft Security Copilot (2024)</li>
-                        <li>Panorámica de amenazas a la ciberseguridad</li>
-                        <li>Primeros pasos con Secure Socket Layer (SSL)</li>
-                        <li>Seguridad informática: Informática forense</li>
-                        <li>Seguridad informática: Investigación y respuesta</li>
-                        <li>Seguridad web esencial</li>
+                        <li>Overview of Cybersecurity Threats</li>
+                        <li>Getting Started with Secure Socket Layer (SSL)</li>
+                        <li>IT Security: Computer Forensics</li>
+                        <li>IT Security: Investigation and Response</li>
+                        <li>Essential Web Security</li>
                     </ul>
                 </section>
 
-            </main>    
+            </main>
 
             <aside class="sidebar-content">
                  <section class="sidebar-section">
-                    <h2 class="!mt-0 !border-0 !text-xl">Contacto</h2>
+                    <h2 class="!mt-0 !border-0 !text-xl">Contact</h2>
                     <div class="contact-info text-gray-700 space-y-1 mt-3">
                         <p><strong>Email:</strong> <a href="mailto:yapura.luis@proton.me">yapura.luis@proton.me</a></p>
-                        <p><strong>Teléfono:</strong> <a href="https://wa.me/+5493512541007">+54 351-2541007</a></p>
+                        <p><strong>Phone:</strong> <a href="https://wa.me/+5493512541007" target="_blank">+54 351-2541007</a></p>
                         <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/luis-yapura" target="_blank">linkedin.com/in/luis-yapura</a></p>
                         <p><strong>Credly:</strong> <a href="https://www.credly.com/users/luis-yapura" target="_blank">credly.com/users/luis-yapura</a></p>
                     </div>
                 </section>
 
                 <section class="sidebar-section">
-                    <h2 class="!mt-0 !border-0 !text-xl">Educación</h2>
+                    <h2 class="!mt-0 !border-0 !text-xl">Education</h2>
                     <div class="mt-3">
-                        <h4 class="text-md font-semibold text-gray-100">Analista Programador de Sistema de Computación</h4>
+                        <h4 class="text-md font-semibold text-gray-100">Systems Programming Analyst</h4>
                         <p class="text-sm text-gray-300">Instituto Superior del Milagro, Salta, Argentina</p>
-                        <p class="text-sm text-gray-200"><em>Graduado</em></p>
-						<h4 class="text-md font-semibold text-gray-100">Experto Universitario en Ethical Hacking</h4>
+                        <p class="text-sm text-gray-200"><em>Graduate</em></p>
+						<h4 class="text-md font-semibold text-gray-100">University Expert in Ethical Hacking</h4>
                         <p class="text-sm text-gray-300">UTN Buenos Aires</p>
-                        <p class="text-sm text-gray-200"><em>Graduado</em></p>
-						<h4 class="text-md font-semibold text-gray-100">Master Internacional en Ciberseguridad</h4>
-						<p class="text-sm text-gray-300">Campus Internacional de Ciberseguridad</p>
-                        <p class="text-sm text-gray-300">UCAM Universidad Catolica San Antonio de Murcia</p>
-                        <p class="text-sm text-gray-200"><em>En Curso</em></p>
+                        <p class="text-sm text-gray-200"><em>Graduate</em></p>
+						<h4 class="text-md font-semibold text-gray-100">International Master's in Cybersecurity</h4>
+						<p class="text-sm text-gray-300">International Cybersecurity Campus</p>
+                        <p class="text-sm text-gray-300">UCAM Catholic University of San Antonio de Murcia</p>
+                        <p class="text-sm text-gray-200"><em>In Progress</em></p>
                   </div>
                 </section>
 
                 <section class="sidebar-section">
-                    <h2 class="!mt-0 !border-0 !text-xl">Competencias Clave</h2>
+                    <h2 class="!mt-0 !border-0 !text-xl">Key Skills</h2>
                     <div class="flex flex-wrap mt-3">
-                        <span class="tag">Hacking Ético</span>
-                        <span class="tag">Auditorías de Seguridad</span>
-                        <span class="tag">Análisis de Vulnerabilidades</span>
+                        <span class="tag">Ethical Hacking</span>
+                        <span class="tag">Security Audits</span>
+                        <span class="tag">Vulnerability Analysis</span>
                         <span class="tag">SIEM</span>
                         <span class="tag">ISO 27001</span>
                         <span class="tag">Python</span>
@@ -395,50 +446,65 @@
                         <span class="tag">SQL Server</span>
                         <span class="tag">PostgreSQL</span>
                         <span class="tag">Oracle DB</span>
-                        <span class="tag">Redes Cisco (CCNA)</span>
+						<span class="tag">Bash</span>
+                        <span class="tag">Cisco Networks (CCNA)</span>
                         <span class="tag">Active Directory</span>
                         <span class="tag">VMWare</span>
                         <span class="tag">VirtualBox</span>
-                        <span class="tag">Resolución de Problemas</span>
-                        <span class="tag">Comunicación Efectiva</span>
+                        <span class="tag">Problem Solving</span>
+                        <span class="tag">Effective Communication</span>
+						<span class="tag">AWS Services</span>
                     </div>
                 </section>
 
                 <section class="sidebar-section">
-                    <h2 class="!mt-0 !border-0 !text-xl">Idiomas</h2>
+                    <h2 class="!mt-0 !border-0 !text-xl">Languages</h2>
                     <div class="languages text-gray-700 mt-3">
-                        <p><strong>Español:</strong> Nativo</p>
-                        <p><strong>Inglés:</strong> Nivel B2</p>
+                        <p><strong>Spanish:</strong> Native</p>
+                        <p><strong>English:</strong> B2 Level</p>
                     </div>
                 </section>
             </aside>
         </div>
     </div>
-    <script>
-            // Efecto Matrix Rain
-            const canvas = document.querySelector('.matrix-rain');
-            const ctx = canvas.getContext('2d');
-            canvas.height = window.innerHeight;
-            canvas.width = window.innerWidth;
-            const letters = 'アァイィウヴエェオカガキギクグケゲコゴサザシジスズセゼソゾタダチヂッツヅテデトドナニヌネノハバパヒビピフブプヘベペホボポマミムメモヤユヨラリルレロワンABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-            const fontSize = 14;
-            const columns = canvas.width / fontSize;
-            const drops = Array(Math.floor(columns)).fill(1);
-        function draw() {
-            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = '#00ff88';
-            ctx.font = fontSize + 'px monospace';   
-        for (let i = 0; i < drops.length; i++) {
-            const text = letters.charAt(Math.floor(Math.random() * letters.length));
-            ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-            drops[i] = 0;
-             }
-    drops[i]++;
+</main>
+<script>
+        const canvas = document.querySelector('.matrix-rain');
+        const ctx = canvas.getContext('2d');
+        canvas.height = window.innerHeight;
+        canvas.width = window.innerWidth;
+        const letters = 'アァイィウヴエェオカガキギクグケゲコゴサザシジスズセゼソゾタダチヂッツヅテデトドナニヌネノハバパヒビピフブプヘベペホボポマミムメモヤユヨラリルレロワンABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+        const fontSize = 14;
+        const columns = canvas.width / fontSize;
+        const drops = Array(Math.floor(columns)).fill(1);
+    function draw() {
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = '#00ff88';
+        ctx.font = fontSize + 'px monospace';   
+    for (let i = 0; i < drops.length; i++) {
+        const text = letters.charAt(Math.floor(Math.random() * letters.length));
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+    if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+        drops[i] = 0;
+         }
+drops[i]++;
   }
 }
 setInterval(draw, 35);
+// Visit Counter
+if (!localStorage.getItem('visits')) {
+  localStorage.setItem('visits', 0);
+}
+let visits = parseInt(localStorage.getItem('visits')) + 1;
+localStorage.setItem('visits', visits);
+document.getElementById('visit-counter').innerText = visits;
+
+// Language Switcher
+function switchLanguage() {
+    alert('Switching to English version...');
+    // Aquí podrías redirigir a una versión en inglés del CV
+}
 </script>
 </body>
 </html>
