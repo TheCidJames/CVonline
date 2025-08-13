@@ -26,6 +26,11 @@
         }
         .header-main-section {
             background: rgba(0, 0, 0, 0.85);
+            border: 1px solid #0f0;
+            box-shadow: 0 0 20px #0f0;
+            margin: auto;
+            padding: 0.3rem;
+            border-radius: 0.5rem;
         }
         @media (min-width: 180mm) { /* Adjust breakpoint if needed for A4 two column */
             .grid-container {
@@ -38,4 +43,5 @@
             .sidebar-content {
                 grid-column: 2 / 3;
             }
+
         }
