@@ -6,6 +6,7 @@
     <title>Luis Yapura Cybersecurity Analyst</title>
     <!-- Include Tailwind CSS CDN for quick and responsive styling -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/main.js"></script>
     <link rel="stylesheet" href="css/css.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -15,61 +16,7 @@
     <canvas id="matrix-canvas"></canvas>
 
     <!-- Navigation Bar -->
-    <header class="sticky top-0 z-50 bg-gray-950/80 backdrop-blur-sm shadow-lg">
-        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold hover:text-green-200 transition-colors">
-                <span class="text-white"> <i class="fab fa-jedi-order" style="color: #22c55e;"></i> Luis</span><span class="text-green-500">. Yapura</span>
-            </a>
-            <div class="space-x-4 md:space-x-8 hidden md:flex">
-                <a href="indexen.html" class="text-white hover:text-green-500 transition-colors">Home</a>
-                <a href="indexen.html#badges" class="text-white hover:text-green-500 transition-colors">Badges</a>
-                <a href="education.html" class="text-white hover:text-green-500 transition-colors">Education</a>
-                <a href="certifications.html" class="text-white hover:text-green-500 transition-colors">Certifications</a>
-                <a href="experience.html" class="text-white hover:text-green-500 transition-colors">Experience</a>
-                <a href="projects.html" class="text-white hover:text-green-500 transition-colors">Projects</a>
-                <div class="relative group">
-                    <button class="text-white hover:text-green-500 inline-flex transition-colors">
-                        <span>Download CV</span>
-                        <svg class="fill-current h-4 w-4 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
-                    </button>
-                    <ul class="absolute hidden text-gray-700 pt-1 group-hover:block w-48 bg-gray-800 rounded-lg shadow-lg z-20">
-                        <li><a class="rounded-t-lg hover:bg-gray-700 py-2 px-4 block whitespace-no-wrap text-white" href="cvesp.pdf">Spanish</a></li>
-                        <li><a class="hover:bg-gray-700 py-2 px-4 block whitespace-no-wrap text-white" href="cven.pdf">English</a></li>
-                    </ul>
-                </div>
-                <a href="index.html" class="text-white hover:text-green-500 font-bold inline-flex items-center transition-colors duration-200">
-                    <i class="fa-solid fa-language text-white mr-2"></i>
-                    <span>Versión en Español</span>
-                </a>
-            </div>
-            <!-- Mobile menu button, hidden by default -->
-            <button id="menu-button" class="md:hidden text-white focus:outline-none">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-            </button>
-        </nav>
-        <!-- Mobile menu, hidden by default -->
-        <div id="mobile-menu" class="hidden md:hidden bg-gray-950/90 text-center">
-            <a href="indexen.html" class="block py-2 hover:bg-gray-800 transition-colors">Home</a>
-            <a href="indexen.html#badges" class="block py-2 hover:bg-gray-800 transition-colors">Badges</a>
-            <a href="education.html" class="block py-2 hover:bg-gray-800 transition-colors">Education</a>
-            <a href="certifications.html" class="block py-2 hover:bg-gray-800 transition-colors">Certifications</a>
-            <a href="experience.html" class="block py-2 hover:bg-gray-800 transition-colors">Experience</a>
-            <a href="projects.html" class="block py-2 hover:bg-gray-800 transition-colors">Projects</a>
-            <div class="relative group">
-                <button id="cv-dropdown-button" class="block py-2 hover:bg-gray-800 transition-colors w-full text-center focus:outline-none">
-                    <span>Download CV</span>
-                    <svg class="fill-current h-4 w-4 ml-2 inline-block transition-transform duration-200" id="cv-dropdown-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
-                </button>
-                <div id="cv-dropdown-menu" class="hidden text-sm bg-gray-800 rounded-lg shadow-lg py-2">
-                    <a class="block px-4 py-2 hover:bg-gray-700 transition-colors" href="cvesp.pdf">Español</a>
-                    <a class="block px-4 py-2 hover:bg-gray-700 transition-colors" href="cven.pdf">English</a>
-                </div>
-            </div>
-            <a href="index.html" class="block py-2 hover:bg-gray-800 transition-colors">Versión en Español</a>
-        </div>
-    </header>
+    <div id="main-header"></div>
 
     <div class="relative z-10">
         <main class="container mx-auto px-4 py-8 md:py-16">
@@ -127,9 +74,12 @@
                                     <li>Database installation on Amazon Web Services (RDS).</li>
                                     <li>Implementation of different servers and configuration in EC2.</li>
                                     <li>Access Controls, Encryption, Data Protection and more.</li>
-									<li>Identity Management.</li>
+                                    <li>Identity Management.</li>
 									<li>Basic knowledge of AWS CloudTrail and Amazon Macie.</li>
-									<li>Domain configuration and administration.</li>									
+									<li>Domain configuration and administration.</li>
+									<li>Knowledge of network protocols (TCP/IP, DNS, DHCP).</li>
+									<li>Knowledge of network security (firewalls, VPN).</li>
+									<li>Knowledge of cloud security (AWS, Azure, GCP).</li>
                                 </ul>
                             </li>
                              <li class="border-b border-green-500/20 pb-4 last:border-b-0">
@@ -173,101 +123,9 @@
                     </div>
                 </div>
             </section>
+            </main>
             <div class="section-separator"></div>
-            <footer class="bg-gray-950/80 backdrop-blur-sm text-center py-8 relative z-10">
-                <div class="flex justify-center space-x-4 mb-4">
-                    <!-- eMail Icon -->
-                    <a href="mailto:yapura.luis@proton.me" target="_blank" class="text-green-400 hover:text-green-200 transition-colors" aria-label="eMail">
-                        <i class="fa-solid fa-envelope text-2xl"></i>
-                    </a>
-                    <!-- WhatsApp Icon -->
-                    <a href="https://wa.me/+543512541007" target="_blank" class="text-green-400 hover:text-green-200 transition-colors" aria-label="WhatsApp">
-                        <i class="fa-brands fa-whatsapp text-2xl"></i>
-                    </a>
-                    <!-- LinkedIn Icon -->
-                    <a href="https://linkedin.com/in/luis-yapura" target="_blank" class="text-green-400 hover:text-green-200 transition-colors" aria-label="LinkedIn">
-                        <i class="fa-brands fa-linkedin-in text-2xl"></i>
-                    </a>
-                    <!-- GitHub Icon -->
-                    <a href="https://github.com/thecidjames" target="_blank" class="text-green-400 hover:text-green-200 transition-colors" aria-label="GitHub">
-                        <i class="fa-brands fa-github text-2xl"></i>
-                    </a>
-                </div>
-                <p class="text-gray-500 text-sm">
-                    &copy; 2025 Luis Yapura. All rights reserved.
-                </p>
-                <p></p>
-                <p></p>
-                <p><i class="fab fa-jedi-order" style="font-size: 2.5rem; color: #22c55e;"></i></p>
-            </footer>
-        </main>
-    </div>
-
-    <!-- Script for mobile menu and Matrix effect -->
-    <script>
-        const menuButton = document.getElementById('menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        menuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Hide mobile menu when a link is clicked
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        });
-
-        // Script for the Matrix-style background effect
-        const canvas = document.getElementById('matrix-canvas');
-        const ctx = canvas.getContext('2d');
-
-        // Set canvas size
-        let width = canvas.width = window.innerWidth;
-        let height = canvas.height = window.innerHeight;
-
-        // Listen for window resize changes
-        window.addEventListener('resize', () => {
-            width = canvas.width = window.innerWidth;
-            height = canvas.height = window.innerHeight;
-            // Recalculate number of columns
-            cols = Math.floor(width / fontSize);
-            drops = new Array(cols).fill(1);
-        });
-
-        // Set of characters and numbers
-        const matrixCharacters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
-        const fontSize = 16;
-        let cols = Math.floor(width / fontSize);
-        let drops = new Array(cols).fill(1);
-
-        // Function to draw the effect
-        function draw() {
-            // Semi-transparent background to create the "waterfall" effect
-            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-            ctx.fillRect(0, 0, width, height);
-
-            // Text style
-            ctx.fillStyle = '#00FF41'; // Bright Matrix green
-            ctx.font = `${fontSize}px monospace`;
-
-            // Draw the characters of each column
-            for (let i = 0; i < drops.length; i++) {
-                const text = matrixCharacters.charAt(Math.floor(Math.random() * matrixCharacters.length));
-                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-
-                // Move the drop down or restart it if it reaches the end
-                if (drops[i] * fontSize > height && Math.random() > 0.975) {
-                    drops[i] = 0;
-                }
-                drops[i]++;
-            }
-        }
-
-        // Start the animation loop
-        setInterval(draw, 33); // Approximately 30 FPS
-    </script>
+    <!-- Footer - Load from JavaScript -->
+    <div id="main-footer"></div>
 </body>
-
 </html>
