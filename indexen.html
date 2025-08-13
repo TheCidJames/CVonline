@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberSecurity Analyst Luis Yapura</title>
+    <!-- Include Tailwind CSS CDN for a fast and responsive style -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/css.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body class="bg-gray-950 text-green-400">
+
+    <!-- Canvas for the Matrix-style background -->
+    <canvas id="matrix-canvas"></canvas>
+
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-50 bg-gray-950/80 backdrop-blur-sm shadow-lg">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold hover:text-green-200 transition-colors">
+                <span class="text-white"> <i class="fab fa-jedi-order" style="color: #22c55e;"></i> Luis</span><span class="text-green-500">. Yapura</span>
+            </a>
+            <div class="space-x-4 md:space-x-8 hidden md:flex">
+                <a href="indexen.html" class="text-white hover:text-green-500 transition-colors">Home</a>
+                <a href="indexen.html#badges" class="text-white hover:text-green-500 transition-colors">Badges</a>
+                <a href="education.html" class="text-white hover:text-green-500 transition-colors">Education</a>
+                <a href="certifications.html" class="text-white hover:text-green-500 transition-colors">Certifications</a>
+                <a href="experience.html" class="text-white hover:text-green-500 transition-colors">Experience</a>
+                <a href="projects.html" class="text-white hover:text-green-500 transition-colors">Projects</a>
+                <div class="relative group">
+                    <button class="text-white hover:text-green-500 inline-flex transition-colors">
+                        <span>Download CV</span>
+                        <svg class="fill-current h-4 w-4 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                    </button>
+                    <ul class="absolute hidden text-gray-700 pt-1 group-hover:block w-48 bg-gray-800 rounded-lg shadow-lg z-20">
+                        <li><a class="rounded-t-lg hover:bg-gray-700 py-2 px-4 block whitespace-no-wrap text-white" href="cvesp.pdf">Spanish</a></li>
+                        <li><a class="hover:bg-gray-700 py-2 px-4 block whitespace-no-wrap text-white" href="cven.pdf">English</a></li>
+                    </ul>
+                </div>
+                <a href="index.html" class="text-white hover:text-green-500 font-bold inline-flex items-center transition-colors duration-200">
+                    <i class="fa-solid fa-language text-white mr-2"></i>
+                    <span>Versión en Español</span>
+                </a>
+            </div>
+            <!-- Mobile menu button, hidden by default -->
+            <button id="menu-button" class="md:hidden text-white focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </nav>
+        <!-- Mobile menu, hidden by default -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-950/90 text-center">
+            <a href="indexen.html" class="block py-2 hover:bg-gray-800 transition-colors">Home</a>
+            <a href="indexen.html#badges" class="block py-2 hover:bg-gray-800 transition-colors">Badges</a>
+            <a href="education.html" class="block py-2 hover:bg-gray-800 transition-colors">Education</a>
+            <a href="certifications.html" class="block py-2 hover:bg-gray-800 transition-colors">Certifications</a>
+            <a href="experience.html" class="block py-2 hover:bg-gray-800 transition-colors">Experience</a>
+            <a href="projects.html" class="block py-2 hover:bg-gray-800 transition-colors">Projects</a>
+                <div class="relative group">
+                   <button id="cv-dropdown-button" class="block py-2 hover:bg-gray-800 transition-colors w-full text-center focus:outline-none">
+                    <span>Download CV</span>
+                    <svg class="fill-current h-4 w-4 ml-2 inline-block transition-transform duration-200" id="cv-dropdown-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                </button>
+                <div id="cv-dropdown-menu" class="hidden text-sm bg-gray-800 rounded-lg shadow-lg py-2">
+                    <a class="block px-4 py-2 hover:bg-gray-700 transition-colors" href="cvesp.pdf">Español</a>
+                    <a class="block px-4 py-2 hover:bg-gray-700 transition-colors" href="cven.pdf">English</a>
+                </div>
+            </div>
+            <a href="index.html" class="block py-2 hover:bg-gray-800 transition-colors">Versión en Español</a>
+        </div>
+    </header>
+
+    <div class="relative z-10">
+        <main class="container mx-auto px-4 py-8 md:py-16">
+
+            <!-- Home Section -->
+            <section id="home" class="min-h-screen flex items-center justify-center text-center flex-col md:flex-row space-y-8 md:space-y-0 md:space-x-12">
+                <!-- Container for the image, now rectangular with inline style -->
+                <div class="flex-shrink-0" style="width: 400px; height: 500px;">
+                <!-- To change the size, modify the 'width' and 'height' values in the style. -->
+                    <img src="me.png" alt="Professional Photo" class="rounded-lg w-full h-full object-cover border-4 border-green-500 shadow-lg">
+                </div>
+                <!-- Container for the home text and "About Me" -->
+            <header class="header-main-section text-center md:text-left">
+                <div class="space-y-4 md:text-left">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight">
+                    <span class="text-green-400">LUIS YAPURA</span> <br>
+                </h1>
+                <h3 class="text-3xl md:text-4xl font-bold mb-10 text-white">
+                    <span class="text-green-400">CEH |</span> Cybersecurity Analyst<br>
+                    <span class="text-white">Systems Analyst</span><br>
+                    <span class="text-green-400">M.P.: 3437 CPCI |</span>
+                    <span class="text-white">Cordoba, Argentina</span>
+                </h3>
+                <!-- About Me Section, now integrated into Home -->
+                    <div class="py-4 text-left">
+                        <h3 class="text-2xl font-bold text-white mb-2">About Me</h3>
+                        <p class="text-lg text-gray-300">
+                            Systems analyst and cybersecurity specialist with experience in ethical hacking, security audits, and administration of systems and databases. Demonstrated competence in Linux and Windows environments, virtualization, and ERP systems. Passionate about identifying and mitigating vulnerabilities, incident response, and technical training. I seek to apply my knowledge and passion for technology to contribute to innovative projects in the field of cybersecurity, which is why I am currently training in an International Master's in Cybersecurity from the International Cybersecurity Campus and the Catholic University San Antonio de Murcia in Spain.
+                        </p>
+                    </div>
+
+                    <div class="pt-8 md:pt-4">
+                        <a href="projects.html" class="inline-block px-8 py-3 bg-green-600 text-white font-semibold rounded-lg shadow-md hover:bg-green-700 transition-colors">
+                            View Projects
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <div class="section-separator"></div>
+             <!-- Credly Badges Section -->
+            <section id="badges" class="py-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 text-white">Credly Badges</h2>
+                <!-- Flex container with wrapping for badges, showing 4 per row on large screens -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-4">
+                    <!-- Box for Credly Badge -->
+                    <div class="bg-gray-900/50 backdrop-blur-sm rounded-lg shadow-lg p-6 flex flex-col items-center text-center justify-center border border-green-500/20" style="width: 250px; height: 250px;">
+                        <!-- Badge image with link -->
+                        <a href="#" target="_blank">
+                            <img src="insignias/img1.png" alt="Cisco Certificate in Ethical Hacking" class="w-[120px] h-[120px] object-cover rounded-md mb-2">
+
+                        </a>
+                        <!-- Badge name -->
+                        <p class="text-lg font-bold text-white leading-tight">Cisco Certificate in Ethical Hacking</p>
+                        <!-- Issuing entity -->
+                        <p class="text-sm text-gray-400">Cisco</p>
+                    </div>
+                     <!-- Box for Credly Badge -->
+                    <div class="bg-gray-900/50 backdrop-blur-sm rounded-lg shadow-lg p-6 flex flex-col items-center text-center justify-center border border-green-500/20" style="width: 250px; height: 250px;">
+                        <!-- Badge image with link -->
+                        <a href="#" target="_blank">
+                            <img src="insignias/img2.png" alt="Offensive Security Capture the Flag, Petester" class="w-[120px] h-[120px] object-cover rounded-md mb-2">
+                        </a>
+                        <!-- Badge name -->
+                        <p class="text-lg font-bold text-white leading-tight">Offensive Security Capture the Flag, Petester</p>
+                        <!-- Issuing entity -->
+                        <p class="text-sm text-gray-400">Cisco </p>
+                    </div>
+                     <!-- Box for Credly Badge -->
+                    <div class="bg-gray-900/50 backdrop-blur-sm rounded-lg shadow-lg p-6 flex flex-col items-center text-center justify-center border border-green-500/20" style="width: 250px; height: 250px;">
+                        <!-- Badge image with link -->
+                        <a href="#" target="_blank">
+                            <img src="insignias/img3.png" alt="Ethical Hacker" class="w-[120px] h-[120px] object-cover rounded-md mb-2">
+                        </a>
+                        <!-- Badge name -->
+                        <p class="text-lg font-bold text-white leading-tight">Ethical Hacker</p>
+                        <!-- Issuing entity -->
+                        <p class="text-sm text-gray-400">Cisco Academy</p>
+                    </div>
+                     <!-- Box for Credly Badge -->
+                    <div class="bg-gray-900/50 backdrop-blur-sm rounded-lg shadow-lg p-6 flex flex-col items-center text-center justify-center border border-green-500/20" style="width: 250px; height: 250px;">
+                        <!-- Badge image with link -->
+                        <a href="#" target="_blank">
+                            <img src="insignias/img4.png" alt="Fortinet Certified Associate Cibersecurity" class="w-[120px] h-[120px] object-cover rounded-md mb-2">
+                        </a>
+                        <!-- Badge name -->
+                        <p class="text-lg font-bold text-white leading-tight">Fortinet Certified Associate Cybersecurity</p>
+
+                        <!-- Issuing entity -->
+                        <p class="text-sm text-gray-400">Fortinet</p>
+                    </div>
+                       <div class="bg-gray-900/50 backdrop-blur-sm rounded-lg shadow-lg p-6 flex flex-col items-center text-center justify-center border border-green-500/20" style="width: 250px; height: 250px;">
+                        <!-- Badge image with link -->
+                        <a href="#" target="_blank">
+                            <img src="insignias/img5.png" alt="Junior Cibersecurity Analyst Career Path" class="w-[120px] h-[120px] object-cover rounded-md mb-2">
+
+                        </a>
+                        <!-- Badge name -->
+                        <p class="text-lg font-bold text-white leading-tight">Junior Cybersecurity Analyst Career Path</p>
+                        <!-- Issuing entity -->
+                        <p class="text-sm text-gray-400">Cisco Academy</p>
+                    </div>
+                     <!-- Box for Credly Badge -->
+                    <div class="bg-gray-900/50 backdrop-blur-sm rounded-lg shadow-lg p-6 flex flex-col items-center text-center justify-center border border-green-500/20" style="width: 250px; height: 250px;">
+                        <!-- Badge image with link -->
+                        <a href="#" target="_blank">
+                            <img src="insignias/img6.png" alt="Fortinet Certified Fundamentals CyberSecurity" class="w-[120px] h-[120px] object-cover rounded-md mb-2">
+                        </a>
+                        <!-- Badge name -->
+                        <p class="text-lg font-bold text-white leading-tight">Fortinet Certified Fundamentals Cybersecurity</p>
+                        <!-- Issuing entity -->
+                        <p class="text-sm text-gray-400">Fortinet</p>
+                    </div>
+                     <!-- Box for Credly Badge -->
+                    <div class="bg-gray-900/50 backdrop-blur-sm rounded-lg shadow-lg p-6 flex flex-col items-center text-center justify-center border border-green-500/20" style="width: 250px; height: 250px;">
+                        <!-- Badge image with link -->
+                        <a href="#" target="_blank">
+                            <img src="insignias/img7.png" alt="Introducción to CyberSecurity" class="w-[120px] h-[120px] object-cover rounded-md mb-2">
+                        </a>
+                        <!-- Badge name -->
+                        <p class="text-lg font-bold text-white leading-tight">Introduction to Cybersecurity</p>
+                        <!-- Issuing entity -->
+                        <p class="text-sm text-gray-400">Cisco Academy</p>
+
+                    </div>
+                     <!-- Box for Credly Badge -->
+                    <div class="bg-gray-900/50 backdrop-blur-sm rounded-lg shadow-lg p-6 flex flex-col items-center text-center justify-center border border-green-500/20" style="width: 250px; height: 250px;">
+                        <!-- Badge image with link -->
+                        <a href="#" target="_blank">
+                            <img src="insignias/img8.png" alt="Network Basics" class="w-[120px] h-[120px] object-cover rounded-md mb-2">
+                        </a>
+                        <!-- Badge name -->
+                        <p class="text-lg font-bold text-white leading-tight">Network Basics</p>
+
+                        <!-- Issuing entity -->
+                        <p class="text-sm text-gray-400">Cisco Academy</p>
+                    </div>
+                       <div class="bg-gray-900/50 backdrop-blur-sm rounded-lg shadow-lg p-6 flex flex-col items-center text-center justify-center border border-green-500/20" style="width: 250px; height: 250px;">
+                        <!-- Badge image with link -->
+                        <a href="#" target="_blank">
+                            <img src="insignias/img9.png" alt="Linux II" class="w-[120px] h-[120px] object-cover rounded-md mb-2">
+
+                        </a>
+                        <!-- Badge name -->
+                        <p class="text-lg font-bold text-white leading-tight">Linux II</p>
+                        <!-- Issuing entity -->
+                        <p class="text-sm text-gray-400">Cisco Academy</p>
+                    </div>
+                     <!-- Box for Credly Badge -->
+                    <div class="bg-gray-900/50 backdrop-blur-sm rounded-lg shadow-lg p-6 flex flex-col items-center text-center justify-center border border-green-500/20" style="width: 250px; height: 250px;">
+                        <!-- Badge image with link -->
+                        <a href="#" target="_blank">
+                            <img src="insignias/img10.png" alt="Linux I" class="w-[120px] h-[120px] object-cover rounded-md mb-2">
+                        </a>
+                        <!-- Badge name -->
+                        <p class="text-lg font-bold text-white leading-tight">Linux I</p>
+                        <!-- Issuing entity -->
+                        <p class="text-sm text-gray-400">Cisco Academy</p>
+                    </div>
+                     <!-- Box for Credly Badge -->
+                    <div class="bg-gray-900/50 backdrop-blur-sm rounded-lg shadow-lg p-6 flex flex-col items-center text-center justify-center border border-green-500/20" style="width: 250px; height: 250px;">
+                        <!-- Badge image with link -->
+                        <a href="#" target="_blank">
+                            <img src="insignias/img11.png" alt="Linux Essentials" class="w-[120px] h-[120px] object-cover rounded-md mb-2">
+                        </a>
+                        <!-- Badge name -->
+                        <p class="text-lg font-bold text-white leading-tight">Linux Essentials</p>
+                        <!-- Issuing entity -->
+                        <p class="text-sm text-gray-400">Cisco Academy</p>
+                    </div>
+                     <!-- Box for Credly Badge -->
+                    <div class="bg-gray-900/50 backdrop-blur-sm rounded-lg shadow-lg p-6 flex flex-col items-center text-center justify-center border border-green-500/20" style="width: 250px; height: 250px;">
+                        <!-- Badge image with link -->
+                        <a href="#" target="_blank">
+                            <img src="insignias/img12.png" alt="Network Support and Security" class="w-[120px] h-[120px] object-cover rounded-md mb-2">
+                        </a>
+                        <!-- Badge name -->
+                        <p class="text-lg font-bold text-white leading-tight">Network Support and Security</p>
+
+                        <!-- Issuing entity -->
+                        <p class="text-sm text-gray-400">Cisco Academy</p>
+                    </div>
+                       <div class="bg-gray-900/50 backdrop-blur-sm rounded-lg shadow-lg p-6 flex flex-col items-center text-center justify-center border border-green-500/20" style="width: 250px; height: 250px;">
+                        <!-- Badge image with link -->
+                        <a href="#" target="_blank">
+                            <img src="insignias/img13.png" alt="Operating System Basics" class="w-[120px] h-[120px] object-cover rounded-md mb-2">
+
+                        </a>
+                        <!-- Badge name -->
+                        <p class="text-lg font-bold text-white leading-tight">Operating System Basics</p>
+                        <!-- Issuing entity -->
+                        <p class="text-sm text-gray-400">Cisco Academy</p>
+                    </div>
+                     <!-- Box for Credly Badge -->
+                    <div class="bg-gray-900/50 backdrop-blur-sm rounded-lg shadow-lg p-6 flex flex-col items-center text-center justify-center border border-green-500/20" style="width: 250px; height: 250px;">
+                        <!-- Badge image with link -->
+                        <a href="#" target="_blank">
+                            <img src="insignias/img14.png" alt="Introduction to Modern AI" class="w-[120px] h-[120px] object-cover rounded-md mb-2">
+                        </a>
+                        <!-- Badge name -->
+                        <p class="text-lg font-bold text-white leading-tight">Introduction to Modern AI</p>
+                        <!-- Issuing entity -->
+                        <p class="text-sm text-gray-400">Cisco Academy</p>
+                    </div>
+                     <!-- Box for Credly Badge -->
+                    <div class="bg-gray-900/50 backdrop-blur-sm rounded-lg shadow-lg p-6 flex flex-col items-center text-center justify-center border border-green-500/20" style="width: 250px; height: 250px;">
+                        <!-- Badge image with link -->
+                        <a href="#" target="_blank">
+                            <img src="insignias/img15.png" alt="CyberSecurity Fundamentals" class="w-[120px] h-[120px] object-cover rounded-md mb-2">
+                        </a>
+                        <!-- Badge name -->
+                        <p class="text-lg font-bold text-white leading-tight">Cybersecurity Fundamentals</p>
+                        <!-- Issuing entity -->
+                        <p class="text-sm text-gray-400">IBM SkillsBuild</p>
+                    </div>
+                     <!-- Box for Credly Badge -->
+                    <div class="bg-gray-900/50 backdrop-blur-sm rounded-lg shadow-lg p-6 flex flex-col items-center text-center justify-center border border-green-500/20" style="width: 250px; height: 250px;">
+                        <!-- Badge image with link -->
+                        <a href="#" target="_blank">
+                            <img src="insignias/img16.png" alt="Artificial Intelligence Fundamentals" class="w-[120px] h-[120px] object-cover rounded-md mb-2">
+
+                        </a>
+                        <!-- Badge name -->
+                        <p class="text-lg font-bold text-white leading-tight">Artificial Intelligence Fundamentals</p>
+
+                        <!-- Issuing entity -->
+                        <p class="text-sm text-gray-400">IBM SkillsBuild</p>
+                    </div>
+                       <div class="bg-gray-900/50 backdrop-blur-sm rounded-lg shadow-lg p-6 flex flex-col items-center text-center justify-center border border-green-500/20" style="width: 250px; height: 250px;">
+                        <!-- Badge image with link -->
+                        <a href="#" target="_blank">
+                            <img src="insignias/img17.png" alt="Getting Started in CyberSecurity 3.0" class="w-[120px] h-[120px] object-cover rounded-md mb-2">
+
+                        </a>
+                        <!-- Badge name -->
+                        <p class="text-lg font-bold text-white leading-tight">Getting Started in Cybersecurity 3.0</p>
+                        <!-- Issuing entity -->
+                        <p class="text-sm text-gray-400">Fortinet</p>
+                    </div>
+                     <!-- Box for Credly Badge -->
+                    <div class="bg-gray-900/50 backdrop-blur-sm rounded-lg shadow-lg p-6 flex flex-col items-center text-center justify-center border border-green-500/20" style="width: 250px; height: 250px;">
+                        <!-- Badge image with link -->
+                        <a href="#" target="_blank">
+                            <img src="insignias/img18.png" alt="Introduction to the Threat Landscape 3.0" class="w-[120px] h-[120px] object-cover rounded-md mb-2">
+                        </a>
+                        <!-- Badge name -->
+                        <p class="text-lg font-bold text-white leading-tight">Introduction to the Threat Landscape 3.0</p>
+                        <!-- Issuing entity -->
+                        <p class="text-sm text-gray-400">Fortinet</p>
+                    </div>
+                     <!-- Box for Credly Badge -->
+                    <div class="bg-gray-900/50 backdrop-blur-sm rounded-lg shadow-lg p-6 flex flex-col items-center text-center justify-center border border-green-500/20" style="width: 250px; height: 250px;">
+                        <!-- Badge image with link -->
+                        <a href="#" target="_blank">
+                            <img src="insignias/img19.png" alt="Fortinet FortiGate 7.4 Operator" class="w-[120px] h-[120px] object-cover rounded-md mb-2">
+                        </a>
+                        <!-- Badge name -->
+                        <p class="text-lg font-bold text-white leading-tight">Fortinet FortiGate 7.4 Operator</p>
+                        <!-- Issuing entity -->
+                        <p class="text-sm text-gray-400">Fortinet</p>
+                    </div>
+                     <!-- Box for Credly Badge -->
+                    <div class="bg-gray-900/50 backdrop-blur-sm rounded-lg shadow-lg p-6 flex flex-col items-center text-center justify-center border border-green-500/20" style="width: 250px; height: 250px;">
+                        <!-- Badge image with link -->
+                        <a href="#" target="_blank">
+                            <img src="insignias/img20.png" alt="Cybersecurity Awareness Learner 2025" class="w-[120px] h-[120px] object-cover rounded-md mb-2">
+                        </a>
+                        <!-- Badge name -->
+                        <p class="text-lg font-bold text-white leading-tight">Cybersecurity Awareness Learner 2025</p>
+
+                        <!-- Issuing entity -->
+                        <p class="text-sm text-gray-400">Certiprof</p>
+                    </div>
+                       <div class="bg-gray-900/50 backdrop-blur-sm rounded-lg shadow-lg p-6 flex flex-col items-center text-center justify-center border border-green-500/20" style="width: 250px; height: 250px;">
+                        <!-- Badge image with link -->
+                        <a href="#" target="_blank">
+                            <img src="insignias/img21.png" alt="Lifelong Learning 2025" class="w-[120px] h-[120px] object-cover rounded-md mb-2">
+
+                        </a>
+                        <!-- Badge name -->
+                        <p class="text-lg font-bold text-white leading-tight">Lifelong Learning 2025</p>
+                        <!-- Issuing entity -->
+                        <p class="text-sm text-gray-400">Certiprof</p>
+                    </div>
+
+                    </div>
+                    <!-- To add more badges, copy and paste the previous 'div' block -->
+
+                </div>
+            </section>
+            <div class="section-separator"></div>
+        </main>
+    </div>
+    <div class="section-separator"></div>
+    <footer class="bg-gray-950/80 backdrop-blur-sm text-center py-8 relative z-10">
+                <div class="flex justify-center space-x-4 mb-4">
+                    <!-- Email Icon-->
+                    <a href="mailto:yapura.luis@proton.me" target="_blank" class="text-green-400 hover:text-green-200 transition-colors" aria-label="eMail">
+                    <i class="fa-solid fa-envelope text-2xl"></i>
+                    </a>
+                    <!-- WhatsApp Icon -->
+                    <a href="https://wa.me/+543512541007" target="_blank" class="text-green-400 hover:text-green-200 transition-colors" aria-label="WhatsApp">
+                    <i class="fa-brands fa-whatsapp text-2xl"></i>
+                    </a>
+                    <!-- LinkedIn Icon -->
+                    <a href="https://linkedin.com/in/luis-yapura" target="_blank" class="text-green-400 hover:text-green-200 transition-colors" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin-in text-2xl"></i>
+                    </a>
+                    <!-- GitHub Icon -->
+                    <a href="https://github.com/thecidjames" target="_blank" class="text-green-400 hover:text-green-200 transition-colors" aria-label="GitHub">
+                        <i class="fa-brands fa-github text-2xl"></i>
+                    </a>
+                </div>
+        <p class="text-gray-500 text-sm">
+            &copy; 2025 Luis Yapura. All rights reserved.
+        </p>
+        <p></p>
+        <p></p>
+        <p><i class="fab fa-jedi-order" style="font-size: 2.5rem; color: #22c55e;"></i></p>
+    </footer>
+
+    <!-- Script for the mobile menu and Matrix effect -->
+    <script>
+        const menuButton = document.getElementById('menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Hide the mobile menu when a link is clicked
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Script for the Matrix-style background effect
+        const canvas = document.getElementById('matrix-canvas');
+        const ctx = canvas.getContext('2d');
+
+        // Set the canvas size
+        let width = canvas.width = window.innerWidth;
+        let height = canvas.height = window.innerHeight;
+
+        // Listen for window size changes
+        window.addEventListener('resize', () => {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+            // Recalculate the number of columns
+            cols = Math.floor(width / fontSize);
+            drops = new Array(cols).fill(1);
+        });
+
+        // Set of characters and numbers
+        const matrixCharacters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
+        const fontSize = 16;
+        let cols = Math.floor(width / fontSize);
+        let drops = new Array(cols).fill(1);
+
+        // Function to draw the effect
+        function draw() {
+            // Semi-transparent background to create the "waterfall" effect
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            ctx.fillRect(0, 0, width, height);
+
+            // Text style
+            ctx.fillStyle = '#00FF41'; // Bright Matrix green
+            ctx.font = `${fontSize}px monospace`;
+
+            // Draw the characters for each column
+            for (let i = 0; i < drops.length; i++) {
+                const text = matrixCharacters.charAt(Math.floor(Math.random() * matrixCharacters.length));
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+                // Move the drop down or reset it if it reaches the end
+                if (drops[i] * fontSize > height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+                drops[i]++;
+            }
+        }
+        // Start the animation loop
+        setInterval(draw, 35); // Approximately 30 FPS
+    </script>
+</body>
+</html>
+
+
+
