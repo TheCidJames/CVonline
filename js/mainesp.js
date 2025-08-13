@@ -41,7 +41,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     <a href="index.html" class="block py-2 hover:bg-gray-800 transition-colors">Home</a>
                     <a href="index.html#badges" class="block py-2 hover:bg-gray-800 transition-colors">Badges</a>
                     <a href="formacion.html" class="block py-2 hover:bg-gray-800 transition-colors">Education</a>
-                    <a href="certificaciones.html" class="block py-2 hover:bg-gray-800 transition-colors">Certifications</a>
                     <a href="experiencia.html" class="block py-2 hover:bg-gray-800 transition-colors">Experience</a>
                     <a href="proyectos.html" class="block py-2 hover:bg-gray-800 transition-colors">Projects</a>
                         <details class="relative">
@@ -170,4 +169,5 @@ document.addEventListener('DOMContentLoaded', () => {
         setInterval(draw, 35);
     }
 });
+
 
