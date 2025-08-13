@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         <a href="index.html" class="text-white hover:text-green-500 transition-colors">Inicio</a>
                         <a href="index.html#insignias" class="text-white hover:text-green-500 transition-colors">Insignias</a>
                         <a href="formacion.html" class="text-white hover:text-green-500 transition-colors">Formación</a>
-                        <a href="certificaciones.html" class="text-white hover:text-green-500 transition-colors">Certificaciones</a>
                         <a href="experiencia.html" class="text-white hover:text-green-500 transition-colors">Experiencia</a>
                         <a href="proyectos.html" class="text-white hover:text-green-500 transition-colors">Projectos</a>
                         <div class="relative group">
@@ -171,3 +170,4 @@ document.addEventListener('DOMContentLoaded', () => {
         setInterval(draw, 35);
     }
 });
+
