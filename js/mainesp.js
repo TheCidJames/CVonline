@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Función para crear la barra de navegación
     function createHeader() {
         const headerHTML = `
-            <header class="sticky top-0 z-50 bg-gray-950/80 backdrop-blur-sm shadow-lg">
+            <header class="fixed w-full top-0 z-50 bg-gray-950/80 backdrop-blur-sm shadow-lg">
                 <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
                     <a href="#" class="text-2xl font-bold hover:text-green-200 transition-colors">
                         <span class="text-white"> <i class="fab fa-jedi-order" style="color: #22c55e;"></i> Luis</span><span class="text-green-500">. Yapura</span>
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </button>
                 </nav>
                 <!-- Mobile menu, hidden by default -->
-                <div id="mobile-menu" class="hidden md:hidden bg-gray-950/90 text-center">
+                <div id="mobile-menu" class="hidden md:hidden bg-gray-950/90 text-center fixed w-full z-50">
                     <a href="index.html" class="block py-2 hover:bg-gray-800 transition-colors">Home</a>
                     <a href="index.html#badges" class="block py-2 hover:bg-gray-800 transition-colors">Badges</a>
                     <a href="formacion.html" class="block py-2 hover:bg-gray-800 transition-colors">Education</a>
@@ -122,6 +122,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // Llama a las funciones para crear los componentes cuando el DOM esté listo
     createHeader();
     createFooter();
+    
+    // Asegura que el encabezado permanezca visible al hacer scroll
+    window.addEventListener('scroll', function() {
+        const header = document.querySelector('header');
+        if (header) {
+            header.classList.add('fixed', 'w-full', 'top-0', 'z-50');
+        }
+    });
 
     // Script para el efecto de fondo Matrix
     const canvas = document.getElementById('matrix-canvas');
