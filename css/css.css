@@ -1,0 +1,41 @@
+ /* Estilo para la fuente Tech Mono, que tiene un look tecnológico y limpio */
+        @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+        body {
+            font-family: 'Share Tech Mono', monospace;
+            overflow-x: hidden; /* Evita el scroll horizontal */
+        }
+        /* Estilos personalizados para el efecto de desplazamiento suave */
+        html {
+            scroll-behavior: smooth;
+        }
+        .section-separator {
+            content: '';
+            display: block;
+            height: 5px;
+            background: linear-gradient(to right, transparent, #22c55e, transparent);
+            margin: 0rem 0;
+        }
+        /* Estilo para el canvas de fondo */
+        #matrix-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1; /* Envía el canvas al fondo */
+        }
+        .header-main-section {
+            background: rgba(0, 0, 0, 0.85);
+        }
+        @media (min-width: 180mm) { /* Adjust breakpoint if needed for A4 two column */
+            .grid-container {
+                grid-template-columns: 2.5fr 1fr;
+                gap: 15mm; /* Gap in mm */
+            }
+            .main-content {
+                grid-column: 1 / 2;
+            }
+            .sidebar-content {
+                grid-column: 2 / 3;
+            }
+        }

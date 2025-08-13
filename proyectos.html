@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luis Yapura CyberSecurity Analyst</title>
+    <!-- Incluye el CDN de Tailwind CSS para un estilo rápido y responsivo -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/css.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-950 text-green-400">
+
+    <!-- Canvas para el fondo estilo Matrix -->
+    <canvas id="matrix-canvas"></canvas>
+
+    <!-- Barra de Navegación -->
+    <header class="sticky top-0 z-50 bg-gray-950/80 backdrop-blur-sm shadow-lg">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold hover:text-green-200 transition-colors">
+                <span class="text-white"> <i class="fab fa-jedi-order" style="color: #22c55e;"></i> Luis</span><span class="text-green-500">. Yapura</span>
+            </a>
+            <div class="space-x-4 md:space-x-8 hidden md:flex">
+                <a href="index.html" class="text-white hover:text-green-500 transition-colors">Inicio</a>
+                <a href="index.html#insignias" class="text-white hover:text-green-500 transition-colors">Insignias</a>
+                <a href="formacion.html" class="text-white hover:text-green-500 transition-colors">Formación</a>
+                <a href="certificaciones.html" class="text-white hover:text-green-500 transition-colors">Certificaciones</a>
+                <a href="experiencia.html" class="text-white hover:text-green-500 transition-colors">Experiencia</a>
+                <a href="proyectos.html" class="text-white hover:text-green-500 transition-colors">Proyectos</a>
+                    <div class="relative group">
+                        <button class="text-white hover:text-green-500 inline-flex transition-colors">
+                            <span>Descargar CV</span>
+                            <svg class="fill-current h-4 w-4 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                        </button>
+                        <ul class="absolute hidden text-gray-700 pt-1 group-hover:block w-48 bg-gray-800 rounded-lg shadow-lg z-20">
+                            <li><a class="rounded-t-lg hover:bg-gray-700 py-2 px-4 block whitespace-no-wrap text-white" href="cvesp.pdf">Español</a></li>
+                            <li><a class="hover:bg-gray-700 py-2 px-4 block whitespace-no-wrap text-white" href="cven.pdf">English</a></li>
+                        </ul>
+                     </div>
+                <a href="indexen.html" class="text-white hover:text-green-500 font-bold inline-flex items-center transition-colors duration-200">
+                    <i class="fa-solid fa-language text-white mr-2"></i>
+                    <span>English Version</span>
+                </a>
+            </div>
+
+            </div>
+            <!-- Botón de menú para móviles, oculto por defecto -->
+            <button id="menu-button" class="md:hidden text-white focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </nav>
+        <!-- Menú móvil, oculto por defecto -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-950/90 text-center">
+            <a href="index.html" class="block py-2 hover:bg-gray-800 transition-colors">Inicio</a>
+            <a href="index.html#insignias" class="block py-2 hover:bg-gray-800 transition-colors">Insignias</a>
+            <a href="formacion.html" class="block py-2 hover:bg-gray-800 transition-colors">Formación</a>
+            <a href="certificaciones.html" class="block py-2 hover:bg-gray-800 transition-colors">Certificaciones</a>
+            <a href="experiencia.html" class="block py-2 hover:bg-gray-800 transition-colors">Experiencia</a>
+            <a href="proyectos.html" class="block py-2 hover:bg-gray-800 transition-colors">Proyectos</a>
+            <a href="#" class="block py-2 hover:bg-gray-800 transition-colors">Descargar CV</a>
+            <a href="indexen.html" class="block py-2 hover:bg-gray-800 transition-colors">English Version</a>
+        </div>
+    </header>
+
+    <div class="relative z-10">
+        <main class="container mx-auto px-4 py-8 md:py-16">
+        <div class="section-separator"></div>
+            <!-- Sección de Proyectos -->
+                        <section id="proyectos" class="py-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 text-white">Proyectos Destacados</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Tarjeta de Proyecto 1 -->
+                    <div class="bg-gray-900/50 backdrop-blur-sm rounded-lg shadow-lg p-6 flex flex-col hover:scale-105 transition-transform duration-300">
+                        <h3 class="text-xl font-semibold text-green-400 mb-2">Diseño de Material de Estudio</h3>
+                        <p class="text-gray-400 flex-grow mb-4">
+                            Dado la creciente problematica de la falta de profesionales capacitados en el area de ciberseguridad, actualmente me encuentro desarrollando material de nivel básico para estudiantes y profesionales interesados en el campo.
+                            Teniendo en cuenta la barrera de que el mayor material de estudio se encuentra en ingles, se ha decidido desarrollar material en español para facilitar la comprensión y el acceso a la información. Con casos practicos en entornos simulados.
+                        </p>
+                        <a href="#" class="text-green-500 hover:text-green-300 transition-colors font-medium">
+                            Disponible en la plataforma proximamente &rarr;
+                        </a>
+                    </div>
+                    <!-- Tarjeta de Proyecto 2 -->
+                    <div class="bg-gray-900/50 backdrop-blur-sm rounded-lg shadow-lg p-6 flex flex-col hover:scale-105 transition-transform duration-300">
+                        <h3 class="text-xl font-semibold text-green-400 mb-2">Diseño y Desarrollo de plataforma eLerning</h3>
+                        <p class="text-gray-400 flex-grow mb-4">
+                            Me encuentro en el proceso de desarrollo de una plataforma de eLerning, la cual se enfoca en la educación tecnológica y la capacitación de profesionales en el campo de la ciberseguridad.
+                            La plataforma cuenta con un sistema de autenticación seguro, un catálogo de cursos y un motor de búsqueda para facilitar la búsqueda de contenido relevante.
+                            Además, se ha implementado un sistema de calificación y comentarios para fomentar la interacción entre los usuarios y mejorar la experiencia de aprendizaje.
+                            La plataforma se ha diseñado para ser intuitiva y fácil de usar, lo que permite a los usuarios acceder a contenido de alta calidad de manera rápida y sencilla.
+                            La plataforma se ha desarrollado utilizando tecnologías modernas como HTML, CSS, JavaScript y PHP, lo que garantiza una experiencia de usuario fluida y sin problemas.
+                            La plataforma se encuentra en pruebas de rendimiento y corrección de errores de diseño, lo que permite a los usuarios acceder a contenido de alta calidad de manera rápida y sencilla.
+                        </p>
+                        <a href="#" class="text-green-500 hover:text-green-300 transition-colors font-medium">
+                            Pagina en construccion &rarr;
+                        </a>
+                    </div>
+                    <!-- Tarjeta de Proyecto 3 -->
+                    <div class="bg-gray-900/50 backdrop-blur-sm rounded-lg shadow-lg p-6 flex flex-col hover:scale-105 transition-transform duration-300">
+                        <h3 class="text-xl font-semibold text-green-400 mb-2">Creacion de VM's vulnerables para practica</h3>
+                        <p class="text-gray-400 flex-grow mb-4">
+                            Usando tecnologias de virtualización como VirtualBox, VMware y Hyper-V, se han creado entornos simulados con VM's vulnerables para practicar y mejorar las habilidades de ciberseguridad.
+                        </p>
+                        <a href="#" class="text-green-500 hover:text-green-300 transition-colors font-medium">
+                            Ver Repositorio &rarr;
+                        </a>
+                    </div>
+                    <!-- Añade más proyectos aquí -->
+                </div>            
+            </section>
+
+            <div class="section-separator"></div>
+            <footer class="bg-gray-950/80 backdrop-blur-sm text-center py-8 relative z-10">
+                <div class="flex justify-center space-x-4 mb-4">
+                    <!-- Iconono de eMail-->
+                    <a href="mailto:yapura.luis@proton.me" target="_blank" class="text-green-400 hover:text-green-200 transition-colors" aria-label="eMail">
+                    <i class="fa-solid fa-envelope text-2xl"></i>
+                    </a>
+                    <!-- Icono de WhatsApp -->
+                    <a href="https://wa.me/+543512541007" target="_blank" class="text-green-400 hover:text-green-200 transition-colors" aria-label="WhatsApp">
+                    <i class="fa-brands fa-whatsapp text-2xl"></i>
+                    </a>
+                    <!-- Icono de LinkedIn -->
+                    <a href="https://linkedin.com/in/luis-yapura" target="_blank" class="text-green-400 hover:text-green-200 transition-colors" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin-in text-2xl"></i>
+                    </a>
+                    <!-- Icono de GitHub -->
+                    <a href="https://github.com/thecidjames" target="_blank" class="text-green-400 hover:text-green-200 transition-colors" aria-label="GitHub">
+                        <i class="fa-brands fa-github text-2xl"></i>
+                    </a>
+                </div>
+        <p class="text-gray-500 text-sm">
+            &copy; 2025 Luis Yapura. Todos los derechos reservados.
+        </p>
+        <p></p>
+        <p></p>
+        <p><i class="fab fa-jedi-order" style="font-size: 2.5rem; color: #22c55e;"></i></p>
+    </footer>
+
+    <!-- Script para el menú móvil y el efecto Matrix -->
+    <script>
+        const menuButton = document.getElementById('menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Oculta el menú móvil al hacer clic en un enlace
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Script para el efecto de fondo estilo Matrix
+        const canvas = document.getElementById('matrix-canvas');
+        const ctx = canvas.getContext('2d');
+
+        // Establece el tamaño del canvas
+        let width = canvas.width = window.innerWidth;
+        let height = canvas.height = window.innerHeight;
+
+        // Escucha los cambios de tamaño de la ventana
+        window.addEventListener('resize', () => {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+            // Recalcula la cantidad de columnas
+            cols = Math.floor(width / fontSize);
+            drops = new Array(cols).fill(1);
+        });
+
+        // Conjunto de caracteres y números
+        const matrixCharacters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
+        const fontSize = 16;
+        let cols = Math.floor(width / fontSize);
+        let drops = new Array(cols).fill(1);
+
+        // Función para dibujar el efecto
+        function draw() {
+            // Fondo semi-transparente para crear el efecto de "cascada"
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            ctx.fillRect(0, 0, width, height);
+
+            // Estilo del texto
+            ctx.fillStyle = '#00FF41'; // Verde brillante de Matrix
+            ctx.font = `${fontSize}px monospace`;
+
+            // Dibuja los caracteres de cada columna
+            for (let i = 0; i < drops.length; i++) {
+                const text = matrixCharacters.charAt(Math.floor(Math.random() * matrixCharacters.length));
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+                // Mueve la gota hacia abajo o la reinicia si llega al final
+                if (drops[i] * fontSize > height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+                drops[i]++;
+            }
+        }
+
+        // Inicia el bucle de animación
+        setInterval(draw, 33); // Aproximadamente 30 FPS
+    </script>
+</body>
+</html>
