@@ -3,514 +3,461 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV ESP - Luis Yapura</title>
+    <title>CyberSecurity Analyst Luis Yapura</title>
+    <!-- Incluye el CDN de Tailwind CSS para un estilo rápido y responsivo -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Share Tech Mono', monospace;
-            color: #0f0; 
-            background-color: #000; 
-            display: flex; 
-            background-image: radial-gradient(circle at center, #001100 0%, #000 100%);
-            justify-content: center; 
-            align-items: center;
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-			width: 98%;
-            overflow-x: hidden;
-        }
-        .container {
-            max-width: 1000px;
-            margin: auto;
-            padding: 2rem;
-            background: rgba(0, 0, 0, 0.85);
-            border: 1px solid #0f0;
-            box-shadow: 0 0 20px #0f0;
-        }
-		
-        h1 { 
-            color: #00ff88; 
-            font-size: 2.5rem; /            
-        }
-        h2 { /* Main section titles */
-            color: #00ff88;; 
-            font-size: 1.6rem; /* Adjusted for A4 */
-            font-weight: 600;
-            margin-top: 1.5rem; /* Adjusted for A4 */
-            margin-bottom: 0.8rem; /* Adjusted for A4 */
-            border-bottom: 1.5px solid #424242; /* gray-400 */
-            padding-bottom: 0.4rem;
-        }
-		
-        h3 { /* Job titles, Education institution, Certificate groups */
-            color: #00ff88; /* gray-700 */
-            font-size: 1.3rem; /* Adjusted for A4 */
-            font-weight: 600;
-            margin-top: 0.8rem;
-			
-        }
-        h4 { /* Certificate institution subtitles, e.g. within a card */
-            color: #00ff88; /* gray-700 */
-            font-size: 1.1rem; /* Adjusted for A4 */
-            font-weight: 600;
-		}
-		   
-        .section-content {
-            margin-bottom: 1rem; /* Adjusted for A4 */
-			font-size: 1rem;
-        }
-        .contact-info p, .languages p {
-            margin-bottom: 0.2rem;
-            font-size: 1 rem; /* Adjusted for A4 */
-        }
-        .contact-info a {
-            color: #00ff88; /* blue-700 */
-            text-decoration: none;
-			font-size: 1 rem;
-        }
-        .contact-info a:hover {
-            text-decoration: underline;
-			font-size: 1.1rem;
-        }
-        ul {
-            list-style-type: disc;
-            margin-left: 1 rem; /* Adjusted for A4 */
-            padding-left: 0.4rem;
-        }
-        li {
-            margin-bottom: 0.3rem;
-            color: #ffffff; /* gray-600 */
-            font-size: 1 rem; /* Adjusted for A4 */
-        }
-        p, .text-gray-700.leading-relaxed {
-             font-size: 1rem; /* Adjusted for A4 */
-             line-height: 1.6;
-			 color: #ffffff;
-			 
-        }
-		p, .description {
-             font-size: 1rem; /* Adjusted for A4 */
-             line-height: 1.6;
-			 
-			 
-        }
-        .job-title-main { /* For job titles in experience */
-             color: #00ff88; /* gray-800 */
-             font-size: 1.1 rem; /* Adjusted for A4 */
-             font-weight: 600;
-        }
-		.company-date {
-            font-style: italic;
-            color: #ffffff; /* gray-600 */
-            font-size: 0.85rem; /* Adjusted for A4 */
-            margin-bottom: 0.4rem;
-        }
-		.tag {
-            background-color: #424242; /* Dark gray for tags */
-            color: #E0E0E0;
-            padding: 0.2rem 0.6rem;
-            border-radius: 0.3rem;
-            font-size: 0.8rem;
-            margin-right: 0.4rem;
-            margin-bottom: 0.4rem;
-            display: inline-block;
-	    }
-        .header-main-section { /* For the top name/title section */
-            background-color: #2a2a2a; /* gray-300 */
-            padding: 1.5rem; /* Adjusted for A4 */
-            border-radius: 0.3rem; /* rounded-lg */
-            margin-bottom: 1.5rem;
-			border: 1px solid #0f0;
-            box-shadow: 0 0 20px #0f0;
-        }
-        .header-main-section p.text-xl {
-            font-size: 1.2rem; /* Adjusted for A4 */
-		}
-         .header-main-section p.text-sm {
-            font-size: 0.95rem; /* Adjusted for A4 */
-	     }
+    <link rel="stylesheet" href="css/css.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-        .sidebar-section {
-            background-color: #2a2a2a;
-            padding: 1rem;
-            border-radius: 0.3rem;
-            margin-bottom: 1rem;
-			border: 1px solid #0f0;
-            box-shadow: 0 0 20px #0f0;
-        }
-        .sidebar-section h2 {
-            font-size: 1.2rem;
-            margin-top: 0 !important;
-            border-bottom: none !important;
-            padding-bottom: 0.2rem;
-        }
-        .sidebar-section h2, .sidebar-section h4 {
-            color: #00ff88; /* Cyan for sidebar headings */
-        }
-        .sidebar-section p {
-            color: #E0E0E0;
-        }
-
-        .grid-container {
-            display: grid;
-            grid-template-columns: 1fr; /* Default to single column for mobile */
-        }
-
-        /* For A4, we might want the two-column layout to kick in earlier or be fixed */
-        @media (min-width: 180mm) { /* Adjust breakpoint if needed for A4 two column */
-            .grid-container {
-                grid-template-columns: 2.5fr 1fr;
-                gap: 15mm; /* Gap in mm */
-            }
-            .main-content {
-                grid-column: 1 / 2;
-            }
-            .sidebar-content {
-                grid-column: 2 / 3;
-            }
-        }
-        .matrix-rain {
-			position: fixed;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			pointer-events: none;
-			z-index: -1;
-		}
-		.menu {
-			position: fixed;
-			top: 1rem;
-			right: 1rem;
-			/* background: rgba(0, 0, 0, 0.5); */
-			backdrop-filter: blur(1px);
-			/* padding: 0.5rem 1rem; */
-			border-radius: 0.5rem;
-			z-index: 50;
-		}
-		.menu ul {
-			list-style: none;
-			padding: 0;
-			margin: 0;
-		}
-		.menu li {
-			margin-bottom: 0.5rem;
-		}
-		.menu a {
-			display: inline-block;
-			background: linear-gradient(135deg, #00ff88, #00ffaa);
-			color: #000;
-			font-weight: bold;
-			padding: 0.5rem 1rem;
-			border-radius: 9999px;
-			box-shadow: 0 0 10px rgba(0,255,170,0.6);
-			transition: transform 0.2s ease, box-shadow 0.2s ease;
-		}
-		.menu a:hover {
-			transform: scale(1.3);
-			box-shadow: 0 0 15px rgba(0,255,170,0.9);
-		}
-		footer {
-			text-align: center;
-			padding: 1rem;
-			font-size: 1.2rem;
-			font-weight: bold;
-			color: #0f0;
-			border-top: 2px solid #0f0;
-			margin-top: 2rem;
-		}
-    </style>
 </head>
-<body> 
-<canvas class="matrix-rain"></canvas>
-<div class="menu" align="center">
-  <ul>
-    <li><a href="cvenglish.html" onclick="switchLanguage()">English Version</a></li>
-    <li><a href="cvesp.pdf" download>Descargar PDF</a></li>
-  </ul>
-</div>
-    <main class="md:col-span-3">
-<div class="container"> <header class="header-main-section text-center md:text-left">
-            <div>
-                <h1 class="text-3xl md:text-4xl font-bold">Luis Yapura</h1>
-                <p class="text-xl font-medium mt-3">Analista en Sistemas</p>
-				<p class="text-xl font-medium mt-3">CyberSecurity Analyst | CEH</p>
-                <p class="text-sm mt-2">Córdoba, Argentina | M.P.: 3437 CPCI</p>
+<body class="bg-gray-950 text-green-400">
+
+    <!-- Canvas para el fondo estilo Matrix -->
+    <canvas id="matrix-canvas"></canvas>
+
+    <!-- Barra de Navegación -->
+    <header class="sticky top-0 z-50 bg-gray-950/80 backdrop-blur-sm shadow-lg">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold hover:text-green-200 transition-colors">
+                <span class="text-white"> <i class="fab fa-jedi-order" style="color: #22c55e;"></i> Luis</span><span class="text-green-500">. Yapura</span>
+            </a>
+            <div class="space-x-4 md:space-x-8 hidden md:flex">
+                <a href="index.html" class="text-white hover:text-green-500 transition-colors">Inicio</a>
+                <a href="index.html#insignias" class="text-white hover:text-green-500 transition-colors">Insignias</a>
+                <a href="formacion.html" class="text-white hover:text-green-500 transition-colors">Formación</a>
+                <a href="certificaciones.html" class="text-white hover:text-green-500 transition-colors">Certificaciones</a>
+                <a href="experiencia.html" class="text-white hover:text-green-500 transition-colors">Experiencia</a>
+                <a href="proyectos.html" class="text-white hover:text-green-500 transition-colors">Proyectos</a>
+                <div class="relative group">
+                    <button class="text-white hover:text-green-500 inline-flex transition-colors">
+                        <span>Descargar CV</span>
+                        <svg class="fill-current h-4 w-4 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                    </button>
+                    <ul class="absolute hidden text-gray-700 pt-1 group-hover:block w-48 bg-gray-800 rounded-lg shadow-lg z-20">
+                        <li><a class="rounded-t-lg hover:bg-gray-700 py-2 px-4 block whitespace-no-wrap text-white" href="cvesp.pdf">Español</a></li>
+                        <li><a class="hover:bg-gray-700 py-2 px-4 block whitespace-no-wrap text-white" href="cven.pdf">English</a></li>
+                    </ul>
+                </div>
+                <a href="indexen.html" class="text-white hover:text-green-500 font-bold inline-flex items-center transition-colors duration-200">
+                    <i class="fa-solid fa-language text-white mr-2"></i>
+                    <span>English Version</span>
+
+                </a>
             </div>
-        </header>
-
-        <div class="grid-container">
-            <main class="main-content">
-                <section class="section-content">
-                    <h2>Perfil Profesional</h2>
-                    <p class="description">
-                        Analista en sistemas y especialista en ciberseguridad con experiencia en hacking ético, auditorías de seguridad, y administración de sistemas y bases de datos. Demostrada competencia en entornos Linux y Windows, virtualización, y sistemas ERP. Apasionado en la identificación y mitigación de vulnerabilidades, respuesta a incidentes y capacitación técnica. Busco aplicar mis conocimientos y pasión por la tecnología para contribuir a proyectos innovadores en el ámbito de la ciberseguridad por lo cual actualmente me encuentro capacitando en un Master Internacional de Ciberseguridad de la mano de el Campus Internacional en Ciberseguridad y la Universidad Catolica San Antonia de Murcia.
-                    </p>
-                </section>
-
-                <section class="section-content">
-                    <h2>Experiencia Laboral</h2>
-                    <div class="mb-6">
-                        <h3 class="job-title-main">Analista en Ciberseguridad - Especialista IT</h3>
-                        <p class="company-date">Cointech, Córdoba, Argentina | 2022 – 2025</p>
-                        <ul class="list-disc pl-5 space-y-1 mt-2">
-                            <li>Análisis y fortalecimiento de la seguridad de la red interna.</li>
-                            <li>Implementación de controles preventivos y monitorización activa de la infraestructura.</li>
-                            <li>Implementación de entornos de virtualización.</li>
-                            <li>Implementación y mantenimiento de IBM QRadar (SIEM).</li>
-                            <li>Implementación de bases de datos Oracle, asegurando integridad y confidencialidad.</li>
-                            <li>Diseño e implementación de políticas de seguridad alineadas con ISO 27001.</li>
-                            <li>Respuesta a incidentes, análisis de vulnerabilidades y desarrollo de scripts para automatización de auditorías.</li>
-                            <li>Capacitación interna en mejores prácticas de seguridad.</li>
-                            <li>Administración y optimización de dispositivos de red y firewalls.</li>
-						</ul>
-                    </div>
-                    <div class="mb-6">
-                        <h3 class="job-title-main">Analista Funcional</h3>
-                        <p class="company-date">DLR Software, Córdoba, Argentina | 2020 – 2021</p>
-                        <ul class="list-disc pl-5 space-y-1 mt-2">
-                            <li>Implementación de sistemas ERP y módulos personalizados; mantenimiento de BBDD y software.</li>
-                            <li>Capacitación técnica y contable a clientes; asistencia remota y presencial.</li>
-                            <li>Análisis de requerimientos, elaboración de documentación técnica y validación funcional.</li>
-							<li>Configuración y mantenimiento de redes, Active Directory y entornos de virtualización.</li>
-							<li>Diseño de funciones personalizadas para sistemas empresariales.</li>
-							<li>Montado y configuración de redes virtuales.</li>
-							<li>Elaboración de documentación técnica, incluyendo especificaciones funcionales y casos de uso.</li>
-							<li>Coordinación con equipos de desarrollo para implementación de solucione.</li>
-							<li>Validación y pruebas funcionales de sistemas para asegurar calidad del software.</li>
-                        </ul>
-                    </div>
-                    <div class="mb-6">
-                        <h3 class="job-title-main">Analista en Sistema - Programador Web</h3>
-                        <p class="company-date">Profesional Independiente, Argentina | 2016 – 2025</p>
-                        <ul class="list-disc pl-5 space-y-1 mt-2">
-                            <li>Desarrollo de software a medida (Pascal, Delphi); creación y diseño web.</li>
-                            <li>Soporte técnico, armado de PC y mantenimiento preventivo.</li>
-							<li>Mantenimiento Preventivo.</li>
-							<li>Instalacion de Software Web Drupal, WordPreess, Joomla, Moodle.</li>
-							<li>Manejo y diseño de base de datos relacionales</li>
-                            <li>Implementacion y Configuracion de servidores Web, Webmail.</li>
-							<li>Instalacion de Base de datos en Amazon Web Service (RDS.)</li>
-							<li>Implementacion de distintos servidores y configuracion en EC2.</li>
-							<li>Controles de Acceso, Cigrado, Proteccion de Datos y Configuracion de VPC.</li>
-                            <li>Gestion de Identidades.</li>
-							<li>Conocimientos Basicos en  AWS CloudTrail y Amazon Macie.</li>
-							<li>Configuración y administracion de dominios</li>
-                        </ul>
-                    </div>
-                     <div>
-                        <h3 class="job-title-main">Soporte Técnico</h3>
-                        <p class="company-date">HVA Informática, Jujuy, Argentina | 2012 – 2016</p>
-                        <ul class="list-disc pl-5 space-y-1 mt-2">
-                            <li>Mantenimiento de infraestructura, armado de PC y soporte técnico.</li>
-                            <li>Configuración de redes y atención al cliente.</li>
-							<li>Soporte técnico para instalación y configuración de hardware y software.</li>
-                        </ul>
-                    </div>
-                </section>
-
-                <section class="section-content">
-                    <h2>Lista de Cursos y Certificados</h2>
-					
-					<h3 class="mt-4">Universidad Tecnológica Nacional, Facultad Regional Buenos Aires</h3>
-                    <ul class="list-disc pl-5 space-y-1 mt-2">
-                        <li>Experto Universitario en Hacking Ético (Ethical Hacking)</li>
-                    </ul>
-                    
-					<h3 class="mt-4">Campus Internaciona de Ciberseguridad</h3>
-                    <ul class="list-disc pl-5 space-y-1 mt-2">
-                        <li>Ciberseguridad Avanzada y defensa integral de Sistema</li>
-                        <li>Analista de Ciberinteligencia OSINT e Investigacion Digital</li>
-                    </ul>
-					
-					<h3 class="mt-4">Cisco U</h3>
-                    <ul class="list-disc pl-5 space-y-1 mt-2">
-                        <li>Cisco Certificate in Ethical Hacking</li>
-                        <li>Offensive Security Pentest Quest</li>
-                    </ul>
-					
-                    <h3 class="mt-4">Cisco Networking Academy</h3>
-                    <ul class="list-disc pl-5 space-y-1 mt-2">
-                        <li>Introducción a la Ciberseguridad</li>
-                        <li>Hacker Ético</li>
-                        <li>Introduction to Modern AI</li>
-                        <li>Operating Systems Basics</li>
-                        <li>Conceptos básicos de redes</li>
-						<li>Linux Essentials</li>                     
-                        <li>Linux 1</li>
-                        <li>Linux 2</li>
-                        <li>Carrera Profesional de Analista Junior en Ciberseguridad</li>
-                        <li>Soporte y seguridad de red (Completed May 19, 2025)</li>
-                        <li>Conectividad IP (Cisco CCNA)</li>
-                    </ul>
-
-                    <h3 class="mt-4">Fortinet Training Institute</h3>
-                    <ul class="list-disc pl-5 space-y-1 mt-2">
-                        <li>FCA - FortiGate 7.4 Operator Self-Paced</li>
-                        <li>FCF - Introduction to the Threat Landscape 3.0</li>
-                        <li>FCF - Getting Started in Cybersecurity 3.0</li>
-						<li>Fortinet Certified Fundamentals in Cybersecurity (Valid until May 26, 2027)</li>
-                        <li>Fortinet Certified Associate in Cybersecurity (Valid until May 26, 2027)</li>
-                    </ul>
-
-                    <h3 class="mt-4">IBM SkillsBuild</h3>
-                    <ul class="list-disc pl-5 space-y-1 mt-2">
-                        <li>Cybersecurity Fundamentals</li>
-                        <li>Artificial Intelligence Fundamentals</li>
-                    </ul>
-                       
-                    <h3 class="mt-4">Santander Open Academy</h3>
-                    <ul class="list-disc pl-5 space-y-1 mt-2">
-                        <li>Python</li>
-                    </ul>
-
-                    <h3 class="mt-4">Otros</h3>
-                    <ul class="list-disc pl-5 space-y-1 mt-2">
-                        <li>Introducción a la IA (Completed course on ChatGPT, GPTs Personalizados, and Make)</li>
-                        <li>Aprende a usar la línea de comandos de Linux</li>
-                        <li>Career Essentials in Cybersecurity by Microsoft and LinkedIn</li>
-                        <li>Ciberseguridad: Herramientas y monitoreo en la gestión de incidentes</li>
-                        <li>Ciberseguridad: Implementar procesos de gestión de incidentes</li>
-                        <li>Cisco CCNA Prep. Cert.: Introducción</li>
-                        <li>Concienciación en ciberseguridad: Terminología de ciberseguridad</li>
-                        <li>Cybersecurity Awareness: Cybersecurity Terminology</li>
-                        <li>Cybersecurity Foundations</li>
-                        <li>Cybersecurity Foundations: Security Architecture</li>
-                        <li>Cybersecurity Upskilling: A Practical Guide to LinkedIn Learning's Cybersecurity Framework</li>
-                        <li>DevOps esencial</li>
-                        <li>Especialista en seguridad de la información</li>
-                        <li>Ethical Hacking: Introduction to Ethical Hacking</li>
-                        <li>Fundamentos de ciberseguridad</li>
-                        <li>Fundamentos de la ciberseguridad: Computador corporativo</li>
-                        <li>Fundamentos de la ciberseguridad: Computador empresarial</li>
-                        <li>Fundamentos de la ciberseguridad para profesionales IT</li>
-                        <li>Fundamentos de la ciberseguridad: Redes</li>
-                        <li>Fundamentos de la ciberseguridad: Sistemas operativos</li>
-                        <li>Ingeniería social para IT</li>
-                        <li>Introducción a AWS: Seguridad</li>
-                        <li>Introducción a la ciberseguridad para usuarios</li>
-                        <li>Introducción a la ISO 27000 y sus estándares de seguridad de la información</li>
-                        <li>Microsoft Security Copilot (2024)</li>
-                        <li>Panorámica de amenazas a la ciberseguridad</li>
-                        <li>Primeros pasos con Secure Socket Layer (SSL)</li>
-                        <li>Seguridad informática: Informática forense</li>
-                        <li>Seguridad informática: Investigación y respuesta</li>
-                        <li>Seguridad web esencial</li>
-                    </ul>
-                </section>
-				<footer>
-					Visitas: <span id="visit-counter">0</span>
-				</footer>
-           </main>    
-
-            <aside class="sidebar-content">
-                 <section class="sidebar-section">
-                    <h2 class="!mt-0 !border-0 !text-xl">Contacto</h2>
-                    <div class="contact-info text-gray-700 space-y-1 mt-3">
-                        <p><strong>Email:</strong> <a href="mailto:yapura.luis@proton.me">yapura.luis@proton.me</a></p>
-                        <p><strong>Teléfono:</strong> <a href="https://wa.me/+5493512541007">+54 351-2541007</a></p>
-                        <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/luis-yapura" target="_blank">linkedin.com/in/luis-yapura</a></p>
-                        <p><strong>Credly:</strong> <a href="https://www.credly.com/users/luis-yapura" target="_blank">credly.com/users/luis-yapura</a></p>
-                    </div>
-                </section>
-
-                <section class="sidebar-section">
-                    <h2 class="!mt-0 !border-0 !text-xl">Educación</h2>
-                    <div class="mt-3">
-                        <h4 class="text-md font-semibold text-gray-100">Analista Programador de Sistema de Computación</h4>
-                        <p class="text-sm text-gray-300">Instituto Superior del Milagro, Salta, Argentina</p>
-                        <p class="text-sm text-gray-200"><em>Graduado</em></p>
-						<h4 class="text-md font-semibold text-gray-100">Experto Universitario en Ethical Hacking</h4>
-                        <p class="text-sm text-gray-300">UTN Buenos Aires</p>
-                        <p class="text-sm text-gray-200"><em>Graduado</em></p>
-						<h4 class="text-md font-semibold text-gray-100">Master Internacional en Ciberseguridad</h4>
-						<p class="text-sm text-gray-300">Campus Internacional de Ciberseguridad</p>
-                        <p class="text-sm text-gray-300">UCAM Universidad Catolica San Antonio de Murcia</p>
-                        <p class="text-sm text-gray-200"><em>En Curso</em></p>
-                  </div>
-                </section>
-
-                <section class="sidebar-section">
-                    <h2 class="!mt-0 !border-0 !text-xl">Competencias Clave</h2>
-                    <div class="flex flex-wrap mt-3">
-                        <span class="tag">Hacking Ético</span>
-                        <span class="tag">Auditorías de Seguridad</span>
-                        <span class="tag">Análisis de Vulnerabilidades</span>
-                        <span class="tag">SIEM</span>
-                        <span class="tag">ISO 27001</span>
-                        <span class="tag">Python</span>
-                        <span class="tag">Scripting</span>
-                        <span class="tag">Linux</span>
-                        <span class="tag">Windows Server</span>
-                        <span class="tag">MySQL</span>
-                        <span class="tag">SQL Server</span>
-                        <span class="tag">PostgreSQL</span>
-                        <span class="tag">Oracle DB</span>
-                        <span class="tag">Redes Cisco (CCNA)</span>
-                        <span class="tag">Active Directory</span>
-                        <span class="tag">VMWare</span>
-                        <span class="tag">VirtualBox</span>
-                        <span class="tag">Resolución de Problemas</span>
-                        <span class="tag">Comunicación Efectiva</span>
-                    </div>
-                </section>
-
-                <section class="sidebar-section">
-                    <h2 class="!mt-0 !border-0 !text-xl">Idiomas</h2>
-                    <div class="languages text-gray-700 mt-3">
-                        <p><strong>Español:</strong> Nativo</p>
-                        <p><strong>Inglés:</strong> Nivel B2</p>
-                    </div>
-                </section>
-		
-            </aside>
+            <!-- Botón de menú para móviles, oculto por defecto -->
+            <button id="menu-button" class="md:hidden text-white focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </nav>
+        <!-- Menú móvil, oculto por defecto -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-950/90 text-center">
+            <a href="index.html" class="block py-2 hover:bg-gray-800 transition-colors">Inicio</a>
+            <a href="index.html#insignias" class="block py-2 hover:bg-gray-800 transition-colors">Insignias</a>
+            <a href="formacion.html" class="block py-2 hover:bg-gray-800 transition-colors">Formación</a>
+            <a href="certificaciones.html" class="block py-2 hover:bg-gray-800 transition-colors">Certificaciones</a>
+            <a href="experiencia.html" class="block py-2 hover:bg-gray-800 transition-colors">Experiencia</a>
+            <a href="proyectos.html" class="block py-2 hover:bg-gray-800 transition-colors">Proyectos</a>
+            <a href="#" class="block py-2 hover:bg-gray-800 transition-colors">Descargar CV</a>
+            <a href="indexen.html" class="block py-2 hover:bg-gray-800 transition-colors">English Version</a>
         </div>
+    </header>
+
+    <div class="relative z-10">
+        <main class="container mx-auto px-4 py-8 md:py-16">
+
+            <!-- Sección de Inicio -->
+            <section id="inicio" class="min-h-screen flex items-center justify-center text-center flex-col md:flex-row space-y-8 md:space-y-0 md:space-x-12">
+                <!-- Contenedor para la imagen, ahora rectangular con estilo en línea -->
+                <div class="flex-shrink-0" style="width: 400px; height: 500px;">
+                <!-- Para cambiar el tamaño, modifica los valores de 'width' y 'height' en el estilo. -->
+                    <img src="me.png" alt="Foto del profesional" class="rounded-lg w-full h-full object-cover border-4 border-green-500 shadow-lg">
+                    </div>
+                <!-- Contenedor para el texto de inicio y "Sobre Mí" -->
+            <header class="header-main-section text-center md:text-left">
+                <div class="space-y-4 md:text-left">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight">
+                    <span class="text-green-400">LUIS YAPURA</span> <br>
+                </h1>
+                <h3 class="text-3xl md:text-4xl font-bold mb-10 text-white">
+                    <span class="text-green-400">CEH |</span> Cybersecurity Analyst<br>
+                    <span class="text-white">Analista en Sistemas</span><br>
+                    <span class="text-green-400">M.P.: 3437 CPCI |</span>
+                    <span class="text-white">Cordoba, Argentina</span>
+                </h3>           
+                <!-- Sección Sobre Mí, ahora integrada en Inicio -->
+                    <div class="py-4 text-left">
+                        <h3 class="text-2xl font-bold text-white mb-2">Sobre Mí</h3>
+                        <p class="text-lg text-gray-300">
+                            Analista en sistemas y especialista en ciberseguridad con experiencia en hacking ético, auditorías de seguridad, y administración de sistemas y bases de datos. Demostrada competencia en entornos Linux y Windows, virtualización, y sistemas ERP. Apasionado en la identificación y mitigación de vulnerabilidades, respuesta a incidentes y capacitación técnica. Busco aplicar mis conocimientos y pasión por la tecnología para contribuir a proyectos innovadores en el ámbito de la ciberseguridad por lo cual actualmente me encuentro capacitando en un Master Internacional de Ciberseguridad de la mano de el Campus Internacional en Ciberseguridad y la Universidad Catolica San Antonia de Murcia en España.
+                        </p>
+                    </div>
+
+                    <div class="pt-8 md:pt-4">
+                        <a href="proyectos.html" class="inline-block px-8 py-3 bg-green-600 text-white font-semibold rounded-lg shadow-md hover:bg-green-700 transition-colors">
+                            Ver Proyectos
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <div class="section-separator"></div>
+             <!-- Sección de Insignias de Credly -->
+            <section id="insignias" class="py-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 text-white">Insignias de Credly</h2>
+                <!-- Contenedor flex con envoltura para las insignias, mostrando 4 por fila en pantallas grandes -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-4">
+                    <!-- Recuadro para Insignia de Credly -->
+                    <div class="bg-gray-900/50 backdrop-blur-sm rounded-lg shadow-lg p-6 flex flex-col items-center text-center justify-center border border-green-500/20" style="width: 250px; height: 250px;">
+                        <!-- Imagen de la insignia con enlace -->
+                        <a href="#" target="_blank">
+                            <img src="insignias/img1.png" alt="Cisco Certificate in Ethical Hacking" class="w-[120px] h-[120px] object-cover rounded-md mb-2">
+
+                        </a>
+                        <!-- Nombre de la insignia -->
+                        <p class="text-lg font-bold text-white leading-tight">Cisco Certificate in Ethical Hacking</p>
+                        <!-- Entidad que la otorga -->
+                        <p class="text-sm text-gray-400">Cisco</p>
+                    </div>
+                     <!-- Recuadro para Insignia de Credly -->
+                    <div class="bg-gray-900/50 backdrop-blur-sm rounded-lg shadow-lg p-6 flex flex-col items-center text-center justify-center border border-green-500/20" style="width: 250px; height: 250px;">
+                        <!-- Imagen de la insignia con enlace -->
+                        <a href="#" target="_blank">
+                            <img src="insignias/img2.png" alt="Offensive Security Capture the Flag, Petester" class="w-[120px] h-[120px] object-cover rounded-md mb-2">
+                        </a>
+                        <!-- Nombre de la insignia -->
+                        <p class="text-lg font-bold text-white leading-tight">Offensive Security Capture the Flag, Petester</p>
+                        <!-- Entidad que la otorga -->
+                        <p class="text-sm text-gray-400">Cisco </p>
+                    </div>
+                     <!-- Recuadro para Insignia de Credly -->
+                    <div class="bg-gray-900/50 backdrop-blur-sm rounded-lg shadow-lg p-6 flex flex-col items-center text-center justify-center border border-green-500/20" style="width: 250px; height: 250px;">
+                        <!-- Imagen de la insignia con enlace -->
+                        <a href="#" target="_blank">
+                            <img src="insignias/img3.png" alt="Ethical Hacker" class="w-[120px] h-[120px] object-cover rounded-md mb-2">
+                        </a>
+                        <!-- Nombre de la insignia -->
+                        <p class="text-lg font-bold text-white leading-tight">Ethical Hacker</p>
+                        <!-- Entidad que la otorga -->
+                        <p class="text-sm text-gray-400">Cisco Academy</p>
+                    </div>
+                     <!-- Recuadro para Insignia de Credly -->
+                    <div class="bg-gray-900/50 backdrop-blur-sm rounded-lg shadow-lg p-6 flex flex-col items-center text-center justify-center border border-green-500/20" style="width: 250px; height: 250px;">
+                        <!-- Imagen de la insignia con enlace -->
+                        <a href="#" target="_blank">
+                            <img src="insignias/img4.png" alt="Fortinet Certified Associate Cibersecurity" class="w-[120px] h-[120px] object-cover rounded-md mb-2">
+                        </a>
+                        <!-- Nombre de la insignia -->
+                        <p class="text-lg font-bold text-white leading-tight">Fortinet Certified Associate Cibersecurity</p>
+
+                        <!-- Entidad que la otorga -->
+                        <p class="text-sm text-gray-400">Fortinet</p>
+                    </div>
+                       <div class="bg-gray-900/50 backdrop-blur-sm rounded-lg shadow-lg p-6 flex flex-col items-center text-center justify-center border border-green-500/20" style="width: 250px; height: 250px;">
+                        <!-- Imagen de la insignia con enlace -->
+                        <a href="#" target="_blank">
+                            <img src="insignias/img5.png" alt="Junior Cibersecurity Analyst Career Path" class="w-[120px] h-[120px] object-cover rounded-md mb-2">
+
+                        </a>
+                        <!-- Nombre de la insignia -->
+                        <p class="text-lg font-bold text-white leading-tight">Junior Cibersecurity Analyst Career Path</p>
+                        <!-- Entidad que la otorga -->
+                        <p class="text-sm text-gray-400">Cisco Academy</p>
+                    </div>
+                     <!-- Recuadro para Insignia de Credly -->
+                    <div class="bg-gray-900/50 backdrop-blur-sm rounded-lg shadow-lg p-6 flex flex-col items-center text-center justify-center border border-green-500/20" style="width: 250px; height: 250px;">
+                        <!-- Imagen de la insignia con enlace -->
+                        <a href="#" target="_blank">
+                            <img src="insignias/img6.png" alt="Fortinet Certified Fundamentals CyberSecurity" class="w-[120px] h-[120px] object-cover rounded-md mb-2">
+                        </a>
+                        <!-- Nombre de la insignia -->
+                        <p class="text-lg font-bold text-white leading-tight">Fortinet Certified Fundamentals CyberSecurity</p>
+                        <!-- Entidad que la otorga -->
+                        <p class="text-sm text-gray-400">Fortinet</p>
+                    </div>
+                     <!-- Recuadro para Insignia de Credly -->
+                    <div class="bg-gray-900/50 backdrop-blur-sm rounded-lg shadow-lg p-6 flex flex-col items-center text-center justify-center border border-green-500/20" style="width: 250px; height: 250px;">
+                        <!-- Imagen de la insignia con enlace -->
+                        <a href="#" target="_blank">
+                            <img src="insignias/img7.png" alt="Introducción to CyberSecurity" class="w-[120px] h-[120px] object-cover rounded-md mb-2">
+                        </a>
+                        <!-- Nombre de la insignia -->
+                        <p class="text-lg font-bold text-white leading-tight">Introduction to CyberSecurity</p>
+                        <!-- Entidad que la otorga -->
+                        <p class="text-sm text-gray-400">Cisco Academy</p>
+
+                    </div>
+                     <!-- Recuadro para Insignia de Credly -->
+                    <div class="bg-gray-900/50 backdrop-blur-sm rounded-lg shadow-lg p-6 flex flex-col items-center text-center justify-center border border-green-500/20" style="width: 250px; height: 250px;">
+                        <!-- Imagen de la insignia con enlace -->
+                        <a href="#" target="_blank">
+                            <img src="insignias/img8.png" alt="Network Basics" class="w-[120px] h-[120px] object-cover rounded-md mb-2">
+                        </a>
+                        <!-- Nombre de la insignia -->
+                        <p class="text-lg font-bold text-white leading-tight">Network Basics</p>
+
+                        <!-- Entidad que la otorga -->
+                        <p class="text-sm text-gray-400">Cisco Academy</p>
+                    </div>
+                       <div class="bg-gray-900/50 backdrop-blur-sm rounded-lg shadow-lg p-6 flex flex-col items-center text-center justify-center border border-green-500/20" style="width: 250px; height: 250px;">
+                        <!-- Imagen de la insignia con enlace -->
+                        <a href="#" target="_blank">
+                            <img src="insignias/img9.png" alt="Linux II" class="w-[120px] h-[120px] object-cover rounded-md mb-2">
+
+                        </a>
+                        <!-- Nombre de la insignia -->
+                        <p class="text-lg font-bold text-white leading-tight">Linux II</p>
+                        <!-- Entidad que la otorga -->
+                        <p class="text-sm text-gray-400">Cisco Academy</p>
+                    </div>
+                     <!-- Recuadro para Insignia de Credly -->
+                    <div class="bg-gray-900/50 backdrop-blur-sm rounded-lg shadow-lg p-6 flex flex-col items-center text-center justify-center border border-green-500/20" style="width: 250px; height: 250px;">
+                        <!-- Imagen de la insignia con enlace -->
+                        <a href="#" target="_blank">
+                            <img src="insignias/img10.png" alt="Linux I" class="w-[120px] h-[120px] object-cover rounded-md mb-2">
+                        </a>
+                        <!-- Nombre de la insignia -->
+                        <p class="text-lg font-bold text-white leading-tight">Linux I</p>
+                        <!-- Entidad que la otorga -->
+                        <p class="text-sm text-gray-400">Cisco Academy</p>
+                    </div>
+                     <!-- Recuadro para Insignia de Credly -->
+                    <div class="bg-gray-900/50 backdrop-blur-sm rounded-lg shadow-lg p-6 flex flex-col items-center text-center justify-center border border-green-500/20" style="width: 250px; height: 250px;">
+                        <!-- Imagen de la insignia con enlace -->
+                        <a href="#" target="_blank">
+                            <img src="insignias/img11.png" alt="Linux Essentials" class="w-[120px] h-[120px] object-cover rounded-md mb-2">
+                        </a>
+                        <!-- Nombre de la insignia -->
+                        <p class="text-lg font-bold text-white leading-tight">Linux Essentials</p>
+                        <!-- Entidad que la otorga -->
+                        <p class="text-sm text-gray-400">Cisco Academy</p>
+                    </div>
+                     <!-- Recuadro para Insignia de Credly -->
+                    <div class="bg-gray-900/50 backdrop-blur-sm rounded-lg shadow-lg p-6 flex flex-col items-center text-center justify-center border border-green-500/20" style="width: 250px; height: 250px;">
+                        <!-- Imagen de la insignia con enlace -->
+                        <a href="#" target="_blank">
+                            <img src="insignias/img12.png" alt="Network Support and Security" class="w-[120px] h-[120px] object-cover rounded-md mb-2">
+                        </a>
+                        <!-- Nombre de la insignia -->
+                        <p class="text-lg font-bold text-white leading-tight">Network Support and Security</p>
+
+                        <!-- Entidad que la otorga -->
+                        <p class="text-sm text-gray-400">Cisco Academy</p>
+                    </div>
+                       <div class="bg-gray-900/50 backdrop-blur-sm rounded-lg shadow-lg p-6 flex flex-col items-center text-center justify-center border border-green-500/20" style="width: 250px; height: 250px;">
+                        <!-- Imagen de la insignia con enlace -->
+                        <a href="#" target="_blank">
+                            <img src="insignias/img13.png" alt="Operating System Basics" class="w-[120px] h-[120px] object-cover rounded-md mb-2">
+
+                        </a>
+                        <!-- Nombre de la insignia -->
+                        <p class="text-lg font-bold text-white leading-tight">Operating System Basics</p>
+                        <!-- Entidad que la otorga -->
+                        <p class="text-sm text-gray-400">Cisco Academy</p>
+                    </div>
+                     <!-- Recuadro para Insignia de Credly -->
+                    <div class="bg-gray-900/50 backdrop-blur-sm rounded-lg shadow-lg p-6 flex flex-col items-center text-center justify-center border border-green-500/20" style="width: 250px; height: 250px;">
+                        <!-- Imagen de la insignia con enlace -->
+                        <a href="#" target="_blank">
+                            <img src="insignias/img14.png" alt="Introduction to Modern AI" class="w-[120px] h-[120px] object-cover rounded-md mb-2">
+                        </a>
+                        <!-- Nombre de la insignia -->
+                        <p class="text-lg font-bold text-white leading-tight">Introduction to Modern AI</p>
+                        <!-- Entidad que la otorga -->
+                        <p class="text-sm text-gray-400">Cisco Academy</p>
+                    </div>
+                     <!-- Recuadro para Insignia de Credly -->
+                    <div class="bg-gray-900/50 backdrop-blur-sm rounded-lg shadow-lg p-6 flex flex-col items-center text-center justify-center border border-green-500/20" style="width: 250px; height: 250px;">
+                        <!-- Imagen de la insignia con enlace -->
+                        <a href="#" target="_blank">
+                            <img src="insignias/img15.png" alt="CyberSecurity Fundamentals" class="w-[120px] h-[120px] object-cover rounded-md mb-2">
+                        </a>
+                        <!-- Nombre de la insignia -->
+                        <p class="text-lg font-bold text-white leading-tight">CyberSecurity Fundamentals</p>
+                        <!-- Entidad que la otorga -->
+                        <p class="text-sm text-gray-400">IBM SkillsBuild</p>
+                    </div>
+                     <!-- Recuadro para Insignia de Credly -->
+                    <div class="bg-gray-900/50 backdrop-blur-sm rounded-lg shadow-lg p-6 flex flex-col items-center text-center justify-center border border-green-500/20" style="width: 250px; height: 250px;">
+                        <!-- Imagen de la insignia con enlace -->
+                        <a href="#" target="_blank">
+                            <img src="insignias/img16.png" alt="Artificial Intelligence Fundamentals" class="w-[120px] h-[120px] object-cover rounded-md mb-2">
+
+                        </a>
+                        <!-- Nombre de la insignia -->
+                        <p class="text-lg font-bold text-white leading-tight">Artificial Intelligence Fundamentals</p>
+
+                        <!-- Entidad que la otorga -->
+                        <p class="text-sm text-gray-400">IBM SkillsBuild</p>
+                    </div>
+                       <div class="bg-gray-900/50 backdrop-blur-sm rounded-lg shadow-lg p-6 flex flex-col items-center text-center justify-center border border-green-500/20" style="width: 250px; height: 250px;">
+                        <!-- Imagen de la insignia con enlace -->
+                        <a href="#" target="_blank">
+                            <img src="insignias/img17.png" alt="Getting Started in CyberSecurity 3.0" class="w-[120px] h-[120px] object-cover rounded-md mb-2">
+
+                        </a>
+                        <!-- Nombre de la insignia -->
+                        <p class="text-lg font-bold text-white leading-tight">Getting Started in CyberSecurity 3.0</p>
+                        <!-- Entidad que la otorga -->
+                        <p class="text-sm text-gray-400">Fortinet</p>
+                    </div>
+                     <!-- Recuadro para Insignia de Credly -->
+                    <div class="bg-gray-900/50 backdrop-blur-sm rounded-lg shadow-lg p-6 flex flex-col items-center text-center justify-center border border-green-500/20" style="width: 250px; height: 250px;">
+                        <!-- Imagen de la insignia con enlace -->
+                        <a href="#" target="_blank">
+                            <img src="insignias/img18.png" alt="Introduction to the Threat Landscape 3.0" class="w-[120px] h-[120px] object-cover rounded-md mb-2">
+                        </a>
+                        <!-- Nombre de la insignia -->
+                        <p class="text-lg font-bold text-white leading-tight">Introduction to the Threat Landscape 3.0</p>
+                        <!-- Entidad que la otorga -->
+                        <p class="text-sm text-gray-400">Fortinet</p>
+                    </div>
+                     <!-- Recuadro para Insignia de Credly -->
+                    <div class="bg-gray-900/50 backdrop-blur-sm rounded-lg shadow-lg p-6 flex flex-col items-center text-center justify-center border border-green-500/20" style="width: 250px; height: 250px;">
+                        <!-- Imagen de la insignia con enlace -->
+                        <a href="#" target="_blank">
+                            <img src="insignias/img19.png" alt="Fortinet FortiGate 7.4 Operator" class="w-[120px] h-[120px] object-cover rounded-md mb-2">
+                        </a>
+                        <!-- Nombre de la insignia -->
+                        <p class="text-lg font-bold text-white leading-tight">Fortinet FortiGate 7.4 Operator</p>
+                        <!-- Entidad que la otorga -->
+                        <p class="text-sm text-gray-400">Fortinet</p>
+                    </div>
+                     <!-- Recuadro para Insignia de Credly -->
+                    <div class="bg-gray-900/50 backdrop-blur-sm rounded-lg shadow-lg p-6 flex flex-col items-center text-center justify-center border border-green-500/20" style="width: 250px; height: 250px;">
+                        <!-- Imagen de la insignia con enlace -->
+                        <a href="#" target="_blank">
+                            <img src="insignias/img20.png" alt="Cybersecurity Awareness Learner 2025" class="w-[120px] h-[120px] object-cover rounded-md mb-2">
+                        </a>
+                        <!-- Nombre de la insignia -->
+                        <p class="text-lg font-bold text-white leading-tight">Cybersecurity Awareness Learner 2025</p>
+
+                        <!-- Entidad que la otorga -->
+                        <p class="text-sm text-gray-400">Certiprof</p>
+                    </div>
+                       <div class="bg-gray-900/50 backdrop-blur-sm rounded-lg shadow-lg p-6 flex flex-col items-center text-center justify-center border border-green-500/20" style="width: 250px; height: 250px;">
+                        <!-- Imagen de la insignia con enlace -->
+                        <a href="#" target="_blank">
+                            <img src="insignias/img21.png" alt="Lifelong Learning 2025" class="w-[120px] h-[120px] object-cover rounded-md mb-2">
+
+                        </a>
+                        <!-- Nombre de la insignia -->
+                        <p class="text-lg font-bold text-white leading-tight">Lifelong Learning 2025</p>
+                        <!-- Entidad que la otorga -->
+                        <p class="text-sm text-gray-400">Certiprof</p>
+                    </div>
+                   
+                    </div>
+                    <!-- Para agregar más insignias, copia y pega el bloque 'div' anterior -->
+                     
+                </div>
+            </section>
+            <div class="section-separator"></div>            
+        </main>
     </div>
+    <div class="section-separator"></div>
+    <footer class="bg-gray-950/80 backdrop-blur-sm text-center py-8 relative z-10">
+                <div class="flex justify-center space-x-4 mb-4">
+                    <!-- Iconono de eMail-->
+                    <a href="mailto:yapura.luis@proton.me" target="_blank" class="text-green-400 hover:text-green-200 transition-colors" aria-label="eMail">
+                    <i class="fa-solid fa-envelope text-2xl"></i>
+                    </a>
+                    <!-- Icono de WhatsApp -->
+                    <a href="https://wa.me/+543512541007" target="_blank" class="text-green-400 hover:text-green-200 transition-colors" aria-label="WhatsApp">
+                    <i class="fa-brands fa-whatsapp text-2xl"></i>
+                    </a>
+                    <!-- Icono de LinkedIn -->
+                    <a href="https://linkedin.com/in/luis-yapura" target="_blank" class="text-green-400 hover:text-green-200 transition-colors" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin-in text-2xl"></i>
+                    </a>
+                    <!-- Icono de GitHub -->
+                    <a href="https://github.com/thecidjames" target="_blank" class="text-green-400 hover:text-green-200 transition-colors" aria-label="GitHub">
+                        <i class="fa-brands fa-github text-2xl"></i>
+                    </a>
+                </div>
+        <p class="text-gray-500 text-sm">
+            &copy; 2025 Luis Yapura. Todos los derechos reservados.
+        </p>
+        <p></p>
+        <p></p>
+        <p><i class="fab fa-jedi-order" style="font-size: 2.5rem; color: #22c55e;"></i></p>
+    </footer>
 
+    <!-- Script para el menú móvil y el efecto Matrix -->
     <script>
-            // Efecto Matrix Rain
-            const canvas = document.querySelector('.matrix-rain');
-            const ctx = canvas.getContext('2d');
-            canvas.height = window.innerHeight;
-            canvas.width = window.innerWidth;
-            const letters = 'アァイィウヴエェオカガキギクグケゲコゴサザシジスズセゼソゾタダチヂッツヅテデトドナニヌネノハバパヒビピフブプヘベペホボポマミムメモヤユヨラリルレロワンABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-            const fontSize = 14;
-            const columns = canvas.width / fontSize;
-            const drops = Array(Math.floor(columns)).fill(1);
+        const menuButton = document.getElementById('menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Oculta el menú móvil al hacer clic en un enlace
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Script para el efecto de fondo estilo Matrix
+        const canvas = document.getElementById('matrix-canvas');
+        const ctx = canvas.getContext('2d');
+
+        // Establece el tamaño del canvas
+        let width = canvas.width = window.innerWidth;
+        let height = canvas.height = window.innerHeight;
+
+        // Escucha los cambios de tamaño de la ventana
+        window.addEventListener('resize', () => {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+            // Recalcula la cantidad de columnas
+            cols = Math.floor(width / fontSize);
+            drops = new Array(cols).fill(1);
+        });
+
+        // Conjunto de caracteres y números
+        const matrixCharacters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
+        const fontSize = 16;
+        let cols = Math.floor(width / fontSize);
+        let drops = new Array(cols).fill(1);
+
+        // Función para dibujar el efecto
         function draw() {
+            // Fondo semi-transparente para crear el efecto de "cascada"
             ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = '#00ff88';
-            ctx.font = fontSize + 'px monospace';   
-        for (let i = 0; i < drops.length; i++) {
-            const text = letters.charAt(Math.floor(Math.random() * letters.length));
-            ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-            drops[i] = 0;
-             }
-    drops[i]++;
-  }
-}
-setInterval(draw, 35);
-// Visit Counter
-if (!localStorage.getItem('visits')) {
-  localStorage.setItem('visits', 0);
-}
-let visits = parseInt(localStorage.getItem('visits')) + 1;
-localStorage.setItem('visits', visits);
-document.getElementById('visit-counter').innerText = visits;
+            ctx.fillRect(0, 0, width, height);
 
-// Language Switcher
-function switchLanguage() {
-    alert('Switching to English version...');
-    // Aquí podrías redirigir a una versión en inglés del CV
-}
-</script>
+            // Estilo del texto
+            ctx.fillStyle = '#00FF41'; // Verde brillante de Matrix
+            ctx.font = `${fontSize}px monospace`;
+
+            // Dibuja los caracteres de cada columna
+            for (let i = 0; i < drops.length; i++) {
+                const text = matrixCharacters.charAt(Math.floor(Math.random() * matrixCharacters.length));
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+                // Mueve la gota hacia abajo o la reinicia si llega al final
+                if (drops[i] * fontSize > height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+                drops[i]++;
+            }
+        }
+        // Inicia el bucle de animación
+        setInterval(draw, 35); // Aproximadamente 30 FPS
+        // Visit Counter
+        document.addEventListener('DOMContentLoaded', () => {
+            if (!localStorage.getItem('visits')) {
+                localStorage.setItem('visits', 0);
+            }
+            let visits = parseInt(localStorage.getItem('visits')) + 1;
+            localStorage.setItem('visits', visits);
+            document.getElementById('visit-counter').innerText = visits;
+        });
+    </script>
 </body>
-
 </html>
 
 
