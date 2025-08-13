@@ -43,5 +43,11 @@
             .sidebar-content {
                 grid-column: 2 / 3;
             }
-
         }
+        .rounded-lg {
+            border-radius: 0.5rem;
+            border-width: 0px;
+            border: 5x solid #0f0;
+            box-shadow: 0 0 20px #0f0;
+        }
+
