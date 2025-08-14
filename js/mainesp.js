@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
             drops = new Array(cols).fill(1);
         });
 
-        const matrixCharacters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
+        const matrixCharacters = 'アァイィウヴエェオカガキギクグケゲコゴサザシジスズセゼソゾタダチヂッツヅテデトドナニヌネノハバパヒビピフブプヘベペホボポマミムメモヤユヨラリルレロワンabcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
         const fontSize = 16;
         let cols = Math.floor(width / fontSize);
         let drops = new Array(cols).fill(1);
@@ -169,6 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setInterval(draw, 35);
     }
 });
+
 
 
 
