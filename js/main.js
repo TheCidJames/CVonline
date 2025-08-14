@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <span class="text-white"> <i class="fab fa-jedi-order" style="color: #22c55e;"></i> Luis</span><span class="text-green-500">. Yapura</span>
                     </a>
                     <div class="space-x-4 md:space-x-8 hidden md:flex">
-                        <a href="indexen.html" class="text-white hover:text-green-500 transition-colors">Home</a>
+                        <a href="indexen.html" class="text-white hover:text-green-500 transition-colors"><i class="fas fa-home"></i></a>
                         <a href="indexen.html#badges" class="text-white hover:text-green-500 transition-colors">Badges</a>
                         <a href="education.html" class="text-white hover:text-green-500 transition-colors">Education</a>
                         <a href="experience.html" class="text-white hover:text-green-500 transition-colors">Experience</a>
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 </nav>
                 <!-- Mobile menu, hidden by default -->
                 <div id="mobile-menu" class="hidden md:hidden bg-gray-950/90 text-center fixed w-full z-50">
-                    <a href="indexen.html" class="block py-2 hover:bg-gray-800 transition-colors">Home</a>
+                    <a href="indexen.html" class="block py-2 hover:bg-gray-800 transition-colors"><i class="fas fa-home"></i></a>
                     <a href="indexen.html#badges" class="block py-2 hover:bg-gray-800 transition-colors">Badges</a>
                     <a href="education.html" class="block py-2 hover:bg-gray-800 transition-colors">Education</a>
                     <a href="experience.html" class="block py-2 hover:bg-gray-800 transition-colors">Experience</a>
@@ -168,4 +168,5 @@ document.addEventListener('DOMContentLoaded', () => {
         setInterval(draw, 35);
     }
 });
+
 
