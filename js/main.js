@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 </p>
                 <p></p>
                 <p></p>
-                <p><i class="fab fa-jedi-order" style="font-size: 2.5rem; color: #22c55e;"></i></p>
+                <p><i class="fab fa-old-republic" style="font-size: 2.5rem; color: #22c55e;"></i></p>
             </footer>
         `;
         const footerPlaceholder = document.getElementById('main-footer');
@@ -168,5 +168,6 @@ document.addEventListener('DOMContentLoaded', () => {
         setInterval(draw, 35);
     }
 });
+
 
 
