@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         <a href="indexen.html" class="text-white hover:text-green-500 transition-colors">Home</a>
                         <a href="indexen.html#badges" class="text-white hover:text-green-500 transition-colors">Badges</a>
                         <a href="education.html" class="text-white hover:text-green-500 transition-colors">Education</a>
-                        <a href="certifications.html" class="text-white hover:text-green-500 transition-colors">Certifications</a>
                         <a href="experience.html" class="text-white hover:text-green-500 transition-colors">Experience</a>
                         <a href="projects.html" class="text-white hover:text-green-500 transition-colors">Projects</a>
                         <div class="relative group">
@@ -42,7 +41,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     <a href="indexen.html" class="block py-2 hover:bg-gray-800 transition-colors">Home</a>
                     <a href="indexen.html#badges" class="block py-2 hover:bg-gray-800 transition-colors">Badges</a>
                     <a href="education.html" class="block py-2 hover:bg-gray-800 transition-colors">Education</a>
-                    <a href="certifications.html" class="block py-2 hover:bg-gray-800 transition-colors">Certifications</a>
                     <a href="experience.html" class="block py-2 hover:bg-gray-800 transition-colors">Experience</a>
                     <a href="projects.html" class="block py-2 hover:bg-gray-800 transition-colors">Projects</a>
                         <details class="relative">
@@ -170,3 +168,4 @@ document.addEventListener('DOMContentLoaded', () => {
         setInterval(draw, 35);
     }
 });
+
