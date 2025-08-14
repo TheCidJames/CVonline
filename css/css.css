@@ -1,8 +1,12 @@
- /* Estilo para la fuente Tech Mono, que tiene un look tecnológico y limpio */
+/* Estilo para la fuente Tech Mono, que tiene un look tecnológico y limpio */
         @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
         body {
             font-family: 'Share Tech Mono', monospace;
             overflow-x: hidden; /* Evita el scroll horizontal */
+            padding-top: 70px; /* Añade espacio para el encabezado fijo */
+        }
+        #mobile-menu {
+            top: 70px; /* Posiciona el menú móvil debajo del encabezado fijo */
         }
         /* Estilos personalizados para el efecto de desplazamiento suave */
         html {
@@ -50,7 +54,7 @@
             border: 5x solid #0f0;
             box-shadow: 0 0 20px #0f0;
         }
-.sticky {
+        .sticky {
             position: sticky;
             top: 0;
         }
@@ -103,5 +107,34 @@
             font-size: 0.875rem; /* Reemplaza text-sm */
             color: rgba(156, 163, 175, 1); /* Reemplaza text-gray-400 */
         }
-
-
+        .sidebar-section {
+            background-color: rgba(17, 24, 39, 0.5);
+            padding: 1rem;
+            border-radius: 0.3rem;
+            margin-bottom: 1rem;
+			border: 1px solid #0f0;
+            box-shadow: 0 0 20px #0f0;
+        }
+        .sidebar-section h2 {
+            font-size: 1.2rem;
+            margin-top: 0 !important;
+            border-bottom: none !important;
+            padding-bottom: 0.2rem;
+        }
+        .sidebar-section h2, .sidebar-section h4 {
+            color: white; /* Green for sidebar headings */
+        }
+        .sidebar-section p {
+            color: #E0E0E0;
+        }
+        .tag {
+            background-color: #424242; /* Dark gray for tags */
+            color: rgb(74 222 128 / 1);
+            border: 1px solid rgb(74 222 128 / 1);
+            padding: 0.2rem 0.6rem;
+            border-radius: 0.3rem;
+            font-size: 0.8rem;
+            margin-right: 0.4rem;
+            margin-bottom: 0.4rem;
+            display: inline-block;
+	    }
