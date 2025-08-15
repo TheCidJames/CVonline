@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
      <!-- Sección derecha en móvil -->
         <div class="flex items-center space-x-4 md:hidden">
             <!-- Botón para cambiar a ingles -->
-            <a href="index.html" class="text-green-400 focus:outline-none">
+            <a href="indexen.html" class="text-green-400 focus:outline-none">
                 <i class="fas fa-language text-2xl"></i>
             </a>
 
@@ -339,4 +339,5 @@ document.addEventListener('DOMContentLoaded', () => {
     })();
 
     // end DOMContentLoaded
+
 });
