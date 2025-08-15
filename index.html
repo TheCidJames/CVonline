@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberSecurity Analyst Luis Yapura</title>
+    <!-- Incluye el CDN de Tailwind CSS para un estilo rápido y responsivo -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/mainesp.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body class="bg-gray-950 text-green-400">
+
+    <!-- Canvas para el fondo estilo Matrix -->
+        <canvas id="matrix-canvas"></canvas>
+
+        <!-- Navigation Bar - Se cargará con JavaScript -->
+    <div id="main-header"></div>
+     <div class="relative z-10">
+        <main class="container mx-auto px-2 py-4 md:py-0">
+            <!-- Hero Section -->
+            <section id="hero" class="min-h-[85vh] flex flex-col items-center justify-center text-center overflow-x-hidden">
+                <div class="space-y-4">
+                    <!-- Las clases no-wrap se han movido a los spans para evitar el estiramiento de la página -->
+                    <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-green-400 font-orbitron hidden-initial">
+                        <span id="typing-name" class="typing-effect no-wrap">Luis Yapura</span>
+                    </h1>
+                    <!-- Esta línea tendrá una animación separada que se activará al final -->
+                    <p id="ceh-line" class="text-xl sm:text-2xl md:text-3xl text-white hidden-initial no-wrap">
+                        <span class="highlight">CEH | </span>Cybersecurity Analyst
+                    </p>
+                    <p class="text-xl sm:text-2xl md:text-3xl text-white hidden-initial">
+                        <span id="typing-role2" class="typing-effect no-wrap">Analista en sistemas</span>
+                    </p>
+                    <p class="text-sm sm:text-base md:text-lg text-gray-300 hidden-initial">
+                        <span id="typing-location" class="typing-effect no-wrap">Córdoba, Argentina | M.P.: 3437 CPCI</span>
+                    </p>
+                </div>
+                <!-- Social Media Icons -->
+                <div id="social-icons" class="flex space-x-6 mt-6 hidden-initial">
+                    <a href="https://www.linkedin.com/in/luis-yapura-427544200/" class="text-gray-400 hover:text-highlight hover:drop-shadow-[0_0_20px_#0f0] transition-all duration-300 text-5xl" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/luisyapura" class="text-gray-400 hover:text-highlight hover:drop-shadow-[0_0_20px_#0f0] transition-all duration-300 text-5xl" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://wa.me/+5493512541007" class="text-gray-400 hover:text-highlight hover:drop-shadow-[0_0_20px_#0f0] transition-all duration-300 text-5xl" aria-label="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="mailto:yapura.luis@proton.me" class="text-gray-400 hover:text-highlight hover:drop-shadow-[0_0_20px_#0f0] transition-all duration-300 text-5xl" aria-label="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                </div>
+            </section>
+        <div class="section-separator"></div>
+        <section id="about" class="py-12 flex flex-col md:flex-row items-center justify-center text-center md:text-left">
+            <div class="md:w-1/3 flex justify-center">
+                <div class="w-64 h-64 md:w-80 md:h-80 relative group matrix-image-frame">
+                    <img src="me.png" alt="Perfil de Luis Yapura" class="w-full h-full object-cover">
+                </div>
+            </div>
+            <div class="md:w-1/2">
+            <h2 class="text-4xl font-bold text-center mb-10 highlight">Sobre Mí</h2>
+                <p id="about-text" class="text-lg text-gray-400 mx-auto leading-relaxed"></p>
+            </div>
+        </section>
+        <!-- Sección de Insignias de Credly -->
+        <div class="section-separator"></div>
+        <section id="insignias" class="py-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 highlight">Insignias de Credly</h2>
+            <!-- Contenedor flex con envoltura para las insignias, mostrando 4 por fila en pantallas grandes -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 mt-4">      
+                <div class="card-traditional">
+                    <div class="card-content">
+                    <div class="image-container">
+                        <img src="insignias/img1.png" alt="Cisco Certificate in Ethical Hacking" class="insignia-image">
+                    </div>
+                    <p class="card-title">Cisco Certificate in Ethical Hacking</p>
+                    <p class="card-issuer">Cisco</p>
+                    </div>
+                </div>
+    
+                <div class="card-traditional">
+                    <div class="card-content">
+                    <div class="image-container">
+                        <img src="insignias/img2.png" alt="Offensive Security Capture the Flag, Petester" class="insignia-image">
+                    </div>
+                <p class="card-title">Offensive Security Capture the Flag, Petester</p>
+                <p class="card-issuer">Cisco</p>
+                    </div>
+                </div>
+
+                <div class="card-traditional">
+                    <div class="card-content">
+                    <div class="image-container">
+                        <img src="insignias/img3.png" alt="Ethical Hacker" class="insignia-image">
+                    </div>
+                    <p class="card-title">Ethical Hacker</p>
+                    <p class="card-issuer">Cisco Academy</p>
+                    </div>
+                </div>
+
+                <div class="card-traditional">
+                    <div class="card-content">
+                    <div class="image-container">
+                        <img src="insignias/img4.png" alt="Fortinet Certified Associate Cibersecurity" class="insignia-image">
+                    </div>
+                    <p class="card-title">Fortinet Certified Associate Cibersecurity</p>
+                    <p class="card-issuer">Fortinet</p>
+                    </div>
+                </div>
+
+                <div class="card-traditional">
+                    <div class="card-content">
+                    <div class="image-container">
+                        <img src="insignias/img5.png" alt="Junior Cibersecurity Analyst Career Path" class="insignia-image">
+                    </div>
+                    <p class="card-title">Junior Cibersecurity Analyst Career Path</p>
+                    <p class="card-issuer">Cisco Academy</p>
+                    </div>
+                </div>
+        <div class="card-traditional hidden collapsible-insignia">
+
+            <div class="card-content">
+                <div class="image-container">
+                    <img src="insignias/img6.png" alt="Fortinet Certified Fundamentals CyberSecurity" class="insignia-image">
+                </div>
+            <p class="card-title">Fortinet Certified Fundamentals CyberSecurity</p>
+            <p class="card-issuer">Fortinet</p>
+        </div>
+    </div>
+
+    <div class="card-traditional hidden collapsible-insignia">
+
+        <div class="card-content">
+                <div class="image-container">
+                    <img src="insignias/img7.png" alt="Introducción to CyberSecurity" class="insignia-image">
+                </div>
+            <p class="card-title">Introduction to CyberSecurity</p>
+            <p class="card-issuer">Cisco Academy</p>
+        </div>
+    </div>
+
+    <div class="card-traditional hidden collapsible-insignia">
+        <div class="card-content">
+                <div class="image-container hidden collapsible-insignia">
+                    <img src="insignias/img8.png" alt="Network Basics" class="insignia-image">
+                </div>
+            <p class="card-title">Network Basics</p>
+            <p class="card-issuer">Cisco Academy</p>
+        </div>
+    </div>
+
+    <div class="card-traditional hidden collapsible-insignia">
+        <div class="card-content">
+                <div class="image-container">
+                    <img src="insignias/img9.png" alt="Linux II" class="insignia-image">
+                </div>
+            <p class="card-title">Linux II</p>
+            <p class="card-issuer">Cisco Academy</p>
+        </div>
+    </div>
+
+    <div class="card-traditional hidden collapsible-insignia">
+        <div class="card-content">
+                <div class="image-container">
+                    <img src="insignias/img10.png" alt="Linux I" class="insignia-image">
+                </div>
+            <p class="card-title">Linux I</p>
+            <p class="card-issuer">Cisco Academy</p>
+        </div>
+    </div>
+
+    <div class="card-traditional hidden collapsible-insignia">
+        <div class="card-content">
+                <div class="image-container">
+                    <img src="insignias/img11.png" alt="Linux Essentials" class="insignia-image">
+                </div>
+            <p class="card-title">Linux Essentials</p>
+            <p class="card-issuer">Cisco Academy</p>
+        </div>
+    </div>
+
+    <div class="card-traditional hidden collapsible-insignia">
+        <div class="card-content">
+                <div class="image-container">
+                    <img src="insignias/img12.png" alt="Network Support and Security" class="insignia-image">
+                </div>
+            <p class="card-title">Network Support and Security</p>
+            <p class="card-issuer">Cisco Academy</p>
+        </div>
+    </div>
+
+        <div class="card-traditional hidden collapsible-insignia">
+            <div class="card-content">
+                <div class="image-container">
+                    <img src="insignias/img13.png" alt="Operating System Basics" class="insignia-image">
+                </div>
+            <p class="card-title">Operating System Basics</p>
+            <p class="card-issuer">Cisco Academy</p>
+        </div>
+    </div>
+
+        <div class="card-traditional hidden collapsible-insignia">
+            <div class="card-content">
+                <div class="image-container">
+                    <img src="insignias/img14.png" alt="Introduction to Modern AI" class="insignia-image">
+                </div>
+            <p class="card-title">Introduction to Modern AI</p>
+            <p class="card-issuer">Cisco Academy</p>
+        </div>
+    </div>
+
+        <div class="card-traditional hidden collapsible-insignia">
+            <div class="card-content">
+                <div class="image-container">
+                    <img src="insignias/img15.png" alt="CyberSecurity Fundamentals" class="insignia-image">
+                </div>
+            <p class="card-title">CyberSecurity Fundamentals</p>
+            <p class="card-issuer">IBM SkillsBuild</p>
+        </div>
+    </div>
+
+        <div class="card-traditional hidden collapsible-insignia">
+            <div class="card-content">
+                <div class="image-container">
+                    <img src="insignias/img16.png" alt="Artificial Intelligence Fundamentals" class="insignia-image">
+                </div>
+            <p class="card-title">Artificial Intelligence Fundamentals</p>
+            <p class="card-issuer">IBM SkillsBuild</p>
+        </div>
+    </div>
+
+        <div class="card-traditional hidden collapsible-insignia">
+            <div class="card-content">
+                    <div class="image-container">
+                        <img src="insignias/img17.png" alt="Getting Started in CyberSecurity 3.0" class="insignia-image">
+                    </div>
+                <p class="card-title">Getting Started in CyberSecurity 3.0</p>
+                <p class="card-issuer">Fortinet</p>
+            </div>
+        </div>
+
+        <div class="card-traditional hidden collapsible-insignia">
+            <div class="card-content">
+                    <div class="image-container">
+                        <img src="insignias/img18.png" alt="Introduction to the Threat Landscape 3.0" class="insignia-image">
+                    </div>
+                <p class="card-title">Introduction to the Threat Landscape 3.0</p>
+                <p class="card-issuer">Fortinet</p>
+            </div>
+        </div>
+
+        <div class="card-traditional hidden collapsible-insignia">
+            <div class="card-content">
+                    <div class="image-container">
+                        <img src="insignias/img19.png" alt="Fortinet FortiGate 7.4 Operator" class="insignia-image">
+                    </div>
+                <p class="card-title">Fortinet FortiGate 7.4 Operator</p>
+                <p class="card-issuer">Fortinet</p>
+            </div>
+        </div>
+
+        <div class="card-traditional hidden collapsible-insignia">
+            <div class="card-content">
+                    <div class="image-container">
+                        <img src="insignias/img20.png" alt="Cybersecurity Awareness Learner 2025" class="insignia-image">
+                    </div>
+                <p class="card-title">Cybersecurity Awareness Learner 2025</p>
+                <p class="card-issuer">Certiprof</p>
+            </div>
+        </div>
+
+        <div class="card-traditional hidden collapsible-insignia">
+            <div class="card-content">
+                    <div class="image-container">
+                        <img src="insignias/img21.png" alt="Lifelong Learning 2025" class="insignia-image">
+                    </div>
+                <p class="card-title">Lifelong Learning 2025</p>
+                <p class="card-issuer">Certiprof</p>
+            </div>
+        </div>
+        </div>
+        <div class="flex justify-center mt-8">
+            <button id="toggle-insignias-btn" class="futuristic-btn px-6 py-2 text-lg">Ver más</button>
+        </div>
+        
+    <!-- Para agregar más insignias, copia y pega el bloque 'div' anterior -->
+            </section>         
+        </main>
+    </div>
+    <div class="section-separator"></div>
+      <!-- Footer - Se cargará con JavaScript -->
+    <div id="main-footer"></div>
+</body>
+</html>
