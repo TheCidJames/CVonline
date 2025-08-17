@@ -107,16 +107,16 @@ document.addEventListener('DOMContentLoaded', () => {
             <footer class="bg-gray-950/80 backdrop-blur-sm text-center py-8 relative z-10">
                 <div class="flex justify-center space-x-4 mb-4">
                     <a href="mailto:yapura.luis@proton.me" target="_blank" class="text-green-400 hover:text-green-200 transition-colors" aria-label="eMail">
-                        <i class="fa-solid fa-envelope text-2xl"></i>
+                        <i class="fa-solid fa-envelope text-3xl"></i>
                     </a>
                     <a href="https://wa.me/+543512541007" target="_blank" class="text-green-400 hover:text-green-200 transition-colors" aria-label="WhatsApp">
-                        <i class="fa-brands fa-whatsapp text-2xl"></i>
+                        <i class="fa-brands fa-whatsapp text-3xl"></i>
                     </a>
                     <a href="https://linkedin.com/in/luis-yapura" target="_blank" class="text-green-400 hover:text-green-200 transition-colors" aria-label="LinkedIn">
-                        <i class="fa-brands fa-linkedin-in text-2xl"></i>
+                        <i class="fa-brands fa-linkedin-in text-3xl"></i>
                     </a>
                     <a href="https://github.com/thecidjames" target="_blank" class="text-green-400 hover:text-green-200 transition-colors" aria-label="GitHub">
-                        <i class="fa-brands fa-github text-2xl"></i>
+                        <i class="fa-brands fa-github text-3xl"></i>
                     </a>
                 </div>
                 <p class="text-gray-500 text-sm">
@@ -341,3 +341,4 @@ document.addEventListener('DOMContentLoaded', () => {
     // end DOMContentLoaded
 
 });
+
