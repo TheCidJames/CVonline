@@ -342,3 +342,39 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
+// JavaScript for icon movement 
+document.addEventListener('DOMContentLoaded', () => {
+    const container = document.querySelector('.scroll-container');
+        if (container) {
+            // Cantidad de píxeles a desplazar en cada intervalo
+            const scrollAmount = 182; // (150px de la tarjeta + 32px del gap)
+            // Velocidad de desplazamiento en milisegundos
+            const scrollSpeed = 2000;
+
+        // Duplicamos el contenido para un bucle continuo
+        const content = Array.from(container.children);
+        content.forEach(item => {
+            const clone = item.cloneNode(true);
+            container.appendChild(clone);
+        });
+
+        // Función de desplazamiento
+            const startScroll = () => {
+            setInterval(() => {
+            // Desplazarse a la derecha
+                container.scrollBy({
+                    left: scrollAmount,
+                    behavior: 'smooth'
+        });
+
+        // Si el desplazamiento ha pasado la mitad del contenido (es decir, el final del original),
+        // reinicia la posición de forma instantánea para el bucle
+        if (container.scrollLeft >= container.scrollWidth / 2) {
+            container.scrollLeft = 0;
+            }
+            }, scrollSpeed);
+        };
+
+        startScroll();
+    }
+    });
