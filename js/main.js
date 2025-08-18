@@ -285,7 +285,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!ctx) return;
 
         const matrixChars = "アァイィウヴエェオカガキギクグケゲコゴサザシジスズセゼソゾタダチヂッツヅテデトドナニヌネノハバパヒビピフブプヘベペホボポマミムメモヤユヨラリルレロワンabcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890@#$%^&*()_+=-/[]{}|:;\"'<>,.?~`";
-        const fontSize = 10;
+        const fontSize = 12;
         let width = window.innerWidth;
         let height = window.innerHeight;
         let columns = Math.max(1, Math.floor(width / fontSize));
@@ -341,3 +341,4 @@ document.addEventListener('DOMContentLoaded', () => {
     // end DOMContentLoaded
 
 });
+
