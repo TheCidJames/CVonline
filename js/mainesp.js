@@ -22,11 +22,22 @@ document.addEventListener('DOMContentLoaded', () => {
         };
     }
 
-    /* ---------- Ensure placeholders exist (so file works on any page) ---------- */
+    // Función auxiliar para el efecto de tecleado en la carga
+    async function typeWriterEffect(element, text, duration) {
+        if (!element) return;
+        element.textContent = "";
+        const charDelay = duration / text.length;
+        for (const char of text) {
+            element.textContent += char;
+            await new Promise(r => setTimeout(r, charDelay));
+        }
+    }
+
+    /* ---------- Ensure placeholders exist ---------- */
     ensurePlaceholder('main-header');
     ensurePlaceholder('main-footer');
 
-    /* ---------- Header & Footer (creación e inyección) ---------- */
+    /* ---------- Header & Footer ---------- */
     function createHeader() {
         const headerHTML = `
         <header class="fixed w-full top-0 z-50 neon-header">
@@ -34,8 +45,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 <a href="#" class="text-2xl font-bold hover:text-green-200 transition-colors font-orbitron">
                     <span class="text-white"> <i class="fa-brands fa-jedi-order" style="color: #22c55e;"></i> Luis </span><span class="text-green-500">.Yapura</span>
                 </a>
-                
-                <!-- Menú de escritorio - Versión Español -->
                 <div id="menu-es" class="hidden md:flex items-center space-x-4 md:space-x-8">
                     <a href="index.html" class="glitch-text text-white hover:text-green-500" data-text="Inicio">Inicio</a>
                     <a href="index.html#about" class="glitch-text text-white hover:text-green-500" data-text="Sobre Mí">Sobre Mí</a>
@@ -47,36 +56,27 @@ document.addEventListener('DOMContentLoaded', () => {
                         <button class="futuristic-btn px-4 py-1 flex items-center">
                             <i class="fas fa-download mr-2"></i>CV
                         </button>
-                        <div class="cv-dropdown-menu absolute right-0 w-48 hidden group-hover:block
-                                transform origin-top scale-y-0 group-hover:scale-y-100 transition-transform duration-300 ease-out">
+                        <div class="cv-dropdown-menu absolute right-0 w-48 hidden group-hover:block transform origin-top scale-y-0 group-hover:scale-y-100 transition-transform duration-300 ease-out">
                             <div class="py-1">
                                 <a href="cvesp.pdf" class="block px-4 py-2 text-sm text-white hover:text-green-500 transparent-menu-link transition-colors">Español</a>
                                 <a href="cven.pdf" class="block px-4 py-2 text-sm text-white hover:text-green-500 transparent-menu-link transition-colors">Inglés</a>
                             </div>
                         </div>
                     </div>
-                    
-                <!-- Botón para versión en ingles -->
-            <a href="indexen.html" class="futuristic-btn px-4 py-1 flex items-center">
-                <i class="fas fa-language mr-2"></i>English
-            </a>
-        </div>
-     <!-- Sección derecha en móvil -->
-        <div class="flex items-center space-x-4 md:hidden">
-            <!-- Botón para cambiar a ingles -->
-            <a href="indexen.html" class="text-green-400 focus:outline-none">
-                <i class="fas fa-language text-2xl"></i>
-            </a>
-
-            <!-- Botón hamburguesa -->
-            <button id="hamburger-menu-btn" class="text-green-400 focus:outline-none">
-                <i class="fas fa-bars text-2xl"></i>
-            </button>
-        </div>
+                    <a href="indexen.html" class="futuristic-btn px-4 py-1 flex items-center">
+                        <i class="fas fa-language mr-2"></i>English
+                    </a>
+                </div>
+                <div class="flex items-center space-x-4 md:hidden">
+                    <a href="indexen.html" class="text-green-400 focus:outline-none">
+                        <i class="fas fa-language text-2xl"></i>
+                    </a>
+                    <button id="hamburger-menu-btn" class="text-green-400 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
             </nav>
         </header>
-
-        <!-- Menú móvil - Versión Española -->
         <div id="mobile-menu" class="fixed top-16 left-0 w-full h-full z-40 bg-gray-950/90 backdrop-blur-md transform -translate-x-full transition-transform duration-300 ease-in-out md:hidden">
             <nav id="mobile-menu-es" class="flex flex-col items-center justify-center h-full space-y-8">
                 <a href="index.html" class="text-white text-2xl hover:text-green-500 transition-colors">Inicio</a>
@@ -85,7 +85,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 <a href="formacion.html" class="text-white text-2xl hover:text-green-500 transition-colors">Formación</a>
                 <a href="experiencia.html" class="text-white text-2xl hover:text-green-500 transition-colors">Experiencia</a>
                 <a href="proyectos.html" class="text-white text-2xl hover:text-green-500 transition-colors">Proyectos</a>
-                <!-- Menú CV para la versión móvil -->
                 <div class="w-full text-center">
                     <button id="mobile-cv-toggle-btn" class="futuristic-btn px-4 py-1 flex items-center justify-center mx-auto">
                         <i class="fas fa-download mr-2"></i>CV
@@ -96,8 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                 </div>
             </nav>
-        </div>
-        `;
+        </div>`;
         const headerPlaceholder = document.getElementById('main-header');
         if (headerPlaceholder) headerPlaceholder.innerHTML = headerHTML;
     }
@@ -107,16 +105,16 @@ document.addEventListener('DOMContentLoaded', () => {
             <footer class="bg-gray-950/80 backdrop-blur-sm text-center py-8 relative z-10">
                 <div class="flex justify-center space-x-4 mb-4">
                     <a href="mailto:yapura.luis@proton.me" target="_blank" class="text-green-400 hover:text-green-200 transition-colors" aria-label="eMail">
-                        <i class="fa-solid fa-envelope text-3xl"></i>
+                        <i class="fa-solid fa-envelope text-2xl"></i>
                     </a>
                     <a href="https://wa.me/+543512541007" target="_blank" class="text-green-400 hover:text-green-200 transition-colors" aria-label="WhatsApp">
-                        <i class="fa-brands fa-whatsapp text-3xl"></i>
+                        <i class="fa-brands fa-whatsapp text-2xl"></i>
                     </a>
                     <a href="https://linkedin.com/in/luis-yapura" target="_blank" class="text-green-400 hover:text-green-200 transition-colors" aria-label="LinkedIn">
-                        <i class="fa-brands fa-linkedin-in text-3xl"></i>
+                        <i class="fa-brands fa-linkedin-in text-2xl"></i>
                     </a>
                     <a href="https://github.com/thecidjames" target="_blank" class="text-green-400 hover:text-green-200 transition-colors" aria-label="GitHub">
-                        <i class="fa-brands fa-github text-3xl"></i>
+                        <i class="fa-brands fa-github text-2xl"></i>
                     </a>
                 </div>
                 <p class="text-gray-500 text-sm">
@@ -129,83 +127,36 @@ document.addEventListener('DOMContentLoaded', () => {
         if (footerPlaceholder) footerPlaceholder.innerHTML = footerHTML;
     }
 
-    /* ---------- Create header/footer then translate menu according to saved/detected language ---------- */
     createHeader();
     createFooter();
 
-    /* ---------- Header interactions ---------- */
-    (function initHeaderInteractions() {
-        const hamburgerBtn = document.getElementById('hamburger-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const mobileCvBtn = document.getElementById('mobile-cv-toggle-btn');
-        const mobileCvDropdown = document.getElementById('mobile-cv-dropdown');
+    /* ---------- Interactions ---------- */
+    const hamburgerBtn = document.getElementById('hamburger-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileCvBtn = document.getElementById('mobile-cv-toggle-btn');
+    const mobileCvDropdown = document.getElementById('mobile-cv-dropdown');
 
-        if (hamburgerBtn && mobileMenu) {
-            hamburgerBtn.addEventListener('click', () => {
-                mobileMenu.classList.toggle('-translate-x-full');
-            });
-        }
+    if (hamburgerBtn && mobileMenu) {
+        hamburgerBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('-translate-x-full');
+        });
+    }
 
-        // Toggle para el menú del CV en móvil
-        if (mobileCvBtn && mobileCvDropdown) {
-            mobileCvBtn.addEventListener('click', () => {
-                mobileCvDropdown.classList.toggle('hidden');
-            });
-        }
-    })();
-        // EFECTO CRT ENCENDIDO (3 SEGUNDOS)
-        async function typeWriter(element, text, duration) {
-            element.textContent = "";
-                const delay = duration / text.length;
-                for (const char of text) {
-                    element.textContent += char;
-                    await new Promise(r => setTimeout(r, delay));
-            }
-        }
+    if (mobileCvBtn && mobileCvDropdown) {
+        mobileCvBtn.addEventListener('click', () => {
+            mobileCvDropdown.classList.toggle('hidden');
+        });
+    }
 
-            async function powerOn() {
-                const overlay = document.getElementById('crt-startup-overlay');
-                const textEl = document.getElementById('startup-typing-text');
-                const cursor = document.getElementById('startup-cursor');
-
-                // Tecleo del mensaje (1s)
-                await typeWriter(textEl, "Estableciendo enlace...", 1000);
-                
-                // Pausa (2s) para completar los 3s
-                await new Promise(r => setTimeout(r, 2000));
-
-                // Animación física del monitor
-                textEl.style.display = 'none';
-                cursor.style.display = 'none';
-                overlay.classList.add('power-on-anim');
-
-                setTimeout(() => {
-                    overlay.style.opacity = '0';
-                    setTimeout(() => {
-                        overlay.style.display = 'none';
-                        initMatrix();
-                        startHeroAnimations();
-                        startAboutTypewriter();
-                    }, 300);
-                }, 1000);
-            }
     /* ---------- Insignias collapse ---------- */
-    (function initInsigniasToggle() {
-        const toggleButton = document.getElementById('toggle-insignias-btn');
-        const hiddenInsignias = document.querySelectorAll('.collapsible-insignia');
+    const toggleButton = document.getElementById('toggle-insignias-btn');
+    const hiddenInsignias = document.querySelectorAll('.collapsible-insignia');
 
-        if (!toggleButton || hiddenInsignias.length === 0) return;
-
-        // Se usa texto fijo en español
+    if (toggleButton && hiddenInsignias.length > 0) {
         toggleButton.textContent = 'Ver más';
-
         toggleButton.addEventListener('click', () => {
             const isExpanded = toggleButton.classList.contains('expanded');
-
-            hiddenInsignias.forEach(insignia => {
-                insignia.classList.toggle('hidden');
-            });
-
+            hiddenInsignias.forEach(insignia => insignia.classList.toggle('hidden'));
             if (!isExpanded) {
                 toggleButton.classList.add('expanded');
                 toggleButton.textContent = 'Ver menos';
@@ -214,10 +165,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 toggleButton.textContent = 'Ver más';
             }
         });
-    })();
+    }
 
-    /* ---------- Hero typing / boot effects (only if #hero exists) ---------- */
-    (function initHeroAnimations() {
+    /* ---------- Hero animations ---------- */
+    function startHeroAnimations() {
         const hero = document.getElementById('hero');
         if (!hero) return;
 
@@ -231,43 +182,41 @@ document.addEventListener('DOMContentLoaded', () => {
 
         hero.classList.add('crt-boot-effect');
 
-        setTimeout(() => {
-            let delay = 0;
-            elementsToAnimate.forEach((element, index) => {
-                if (!element) { delay += 3000; return; }
-                setTimeout(() => {
-                    if (element.parentElement) element.parentElement.classList.remove('hidden-initial');
-                    element.classList.add('blinking-cursor');
-                    if (index === 0) {
-                        element.classList.add('typing-animation-name');
-                        element.parentElement?.classList.add('matrix-boot-up');
-                    } else {
-                        element.classList.add('typing-animation-line');
-                    }
+        let delay = 0;
+        elementsToAnimate.forEach((element, index) => {
+            if (!element) { delay += 1000; return; }
+            setTimeout(() => {
+                if (element.parentElement) element.parentElement.classList.remove('hidden-initial');
+                element.classList.add('blinking-cursor');
+                if (index === 0) {
+                    element.classList.add('typing-animation-name');
+                    element.parentElement?.classList.add('matrix-boot-up');
+                } else {
+                    element.classList.add('typing-animation-line');
+                }
 
-                    element.addEventListener('animationend', (event) => {
-                        if (event.animationName && event.animationName.includes('typing')) {
-                            element.classList.remove('blinking-cursor');
-                            if (index === elementsToAnimate.length - 1) {
+                element.addEventListener('animationend', (event) => {
+                    if (event.animationName && event.animationName.includes('typing')) {
+                        element.classList.remove('blinking-cursor');
+                        if (index === elementsToAnimate.length - 1) {
+                            setTimeout(() => {
+                                cehLine?.classList.remove('hidden-initial');
+                                cehLine?.classList.add('fade-in', 'matrix-boot-up');
                                 setTimeout(() => {
-                                    cehLine?.classList.remove('hidden-initial');
-                                    cehLine?.classList.add('fade-in', 'matrix-boot-up');
-                                    setTimeout(() => {
-                                        socialIcons?.classList.remove('hidden-initial');
-                                        socialIcons?.classList.add('fade-in');
-                                    }, 1000);
-                                }, 1000);
-                            }
+                                    socialIcons?.classList.remove('hidden-initial');
+                                    socialIcons?.classList.add('fade-in');
+                                }, 500);
+                            }, 500);
                         }
-                    }, { once: true });
-                }, delay);
-                delay += 3000;
-            });
-        }, 1000);
-    })();
+                    }
+                }, { once: true });
+            }, delay);
+            delay += 1000;
+        });
+    }
 
-    /* ---------- About section typewriter (only if exists) ---------- */
-    (function initAboutTypewriter() {
+    /* ---------- About section typewriter ---------- */
+    function startAboutTypewriter() {
         const aboutTextElement = document.getElementById('about-text');
         const aboutSection = document.getElementById('about');
         if (!aboutTextElement || !aboutSection) return;
@@ -297,11 +246,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }, { threshold: 0.5 });
     
         observer.observe(aboutSection);
-    })();
-    /* ---------- Matrix background (always try to init) ---------- */
-    (function initMatrix() {
+    }
+    
+    /* ---------- Matrix background ---------- */
+    function initMatrix() {
         let canvas = document.getElementById('matrix-canvas');
-        let createdCanvas = false;
         if (!canvas) {
             canvas = document.createElement('canvas');
             canvas.id = 'matrix-canvas';
@@ -313,13 +262,12 @@ document.addEventListener('DOMContentLoaded', () => {
             canvas.style.zIndex = '-1';
             canvas.style.opacity = '0.5';
             document.body.insertBefore(canvas, document.body.firstChild);
-            createdCanvas = true;
         }
 
         const ctx = canvas.getContext && canvas.getContext('2d');
         if (!ctx) return;
 
-        const matrixChars = "アァイィウヴエェオカガキギクグケゲコゴサザシジスズセゼソゾタダチヂッツヅテデトドナニヌネノハバパヒビピフブプヘベペホボポマミムメモヤユヨラリルレロワンabcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890@#$%^&*()_+=-/[]{}|:;\"'<>,.?~`";
+        const matrixChars = "アァイィウヴエェオカガキギクグケゲコゴサザシジスズセゼソゾタダチヂッツヅテデトドナニヌネノハバパヒビピフブプヘベペホボポ마미무메모야유요라릴レロ원abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890@#$%^&*()_+=-/[]{}|:;\"'<>,.?~`";
         const fontSize = 12;
         let width = window.innerWidth;
         let height = window.innerHeight;
@@ -341,7 +289,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setCanvasSize();
 
         let lastTime = 0;
-        const minInterval = 35;
+        const minInterval = 50; 
 
         function frame(now) {
             requestAnimationFrame(frame);
@@ -371,46 +319,79 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('resize', debounce(() => {
             setCanvasSize();
         }, 150));
-    })();
+    }
 
-    // end DOMContentLoaded
+
+    
+    /* ---------- SECUENCIA DE ENCENDIDO CRT (Core) ---------- */
+    async function powerOn() {
+        const overlay = document.getElementById('crt-startup-overlay');
+        const terminalText = document.getElementById('startup-typing-text');
+        const cursor = document.getElementById('startup-cursor');
+
+        if (!overlay || !terminalText) return;
+
+        // 1. Fase de tecleado (1 segundo)
+        await typeWriterEffect(terminalText, "Estableciendo enlace...", 1000);
+        
+        // 2. Fase de espera (2 segundos adicionales para sumar los 3s)
+        await new Promise(r => setTimeout(r, 2000));
+
+        // 3. Fase de colapso visual
+        terminalText.style.display = 'none';
+        cursor.style.display = 'none';
+        overlay.classList.add('power-on-anim');
+
+        // 4. Revelar el sistema e iniciar componentes
+        setTimeout(() => {
+            overlay.style.opacity = '0';
+            setTimeout(() => {
+                overlay.style.display = 'none';
+                
+                // Iniciar motores visuales
+                initMatrix();
+                startHeroAnimations();
+                startAboutTypewriter();
+
+                // NOTA DE EDICIÓN: Registro de animación finalizada en la sesión
+                sessionStorage.setItem('crt_animation_played', 'true');
+            }, 300);
+        }, 1000);
+    }
+
+    // NOTA DE EDICIÓN: Comprobación de estado de sesión para ejecución única
+    const hasAnimationPlayed = sessionStorage.getItem('crt_animation_played');
+
+    if (!hasAnimationPlayed) {
+        // Ejecución normal (primera vez en la pestaña o ventana)
+        powerOn();
+    } else {
+        // NOTA DE EDICIÓN: Salto de animación si ya se reprodujo en esta sesión
+        const overlay = document.getElementById('crt-startup-overlay');
+        if (overlay) overlay.style.display = 'none';
+        
+        // Inicialización inmediata del contenido (ya no son IIFEs, se pueden llamar)
+        initMatrix();
+        startHeroAnimations();
+        startAboutTypewriter();
+    }
 
 });
 
-// JavaScript para el carrusel continuo de íconos
+// Carrusel de íconos
 document.addEventListener('DOMContentLoaded', () => {
     const container = document.querySelector('.scroll-container');
-        if (container) {
-            // Cantidad de píxeles a desplazar en cada intervalo
-            const scrollAmount = 182; // (150px de la tarjeta + 32px del gap)
-            // Velocidad de desplazamiento en milisegundos
-            const scrollSpeed = 2000;
-
-        // Duplicamos el contenido para un bucle continuo
+    if (container) {
+        const scrollAmount = 182;
+        const scrollSpeed = 2000;
         const content = Array.from(container.children);
-        content.forEach(item => {
-            const clone = item.cloneNode(true);
-            container.appendChild(clone);
-        });
+        content.forEach(item => container.appendChild(item.cloneNode(true)));
 
-        // Función de desplazamiento
-            const startScroll = () => {
-            setInterval(() => {
-            // Desplazarse a la derecha
-                container.scrollBy({
-                    left: scrollAmount,
-                    behavior: 'smooth'
-        });
-
-        // Si el desplazamiento ha pasado la mitad del contenido (es decir, el final del original),
-        // reinicia la posición de forma instantánea para el bucle
-        if (container.scrollLeft >= container.scrollWidth / 2) {
-            container.scrollLeft = 0;
+        setInterval(() => {
+            container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            if (container.scrollLeft >= container.scrollWidth / 2) {
+                container.scrollLeft = 0;
             }
-            }, scrollSpeed);
-        };
-
-        startScroll();
+        }, scrollSpeed);
     }
-    });
-
+});
