@@ -21,7 +21,17 @@ document.addEventListener('DOMContentLoaded', () => {
             t = setTimeout(() => fn(...args), wait);
         };
     }
-
+    // Función auxiliar para el efecto de tecleado en la carga
+    async function typeWriterEffect(element, text, duration) {
+        if (!element) return;
+        element.textContent = "";
+        const charDelay = duration / text.length;
+        for (const char of text) {
+            element.textContent += char;
+            await new Promise(r => setTimeout(r, charDelay));
+        }
+    }
+    
     /* ---------- Ensure placeholders exist (so file works on any page) ---------- */
     ensurePlaceholder('main-header');
     ensurePlaceholder('main-footer');
@@ -183,8 +193,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     })();
 
-    /* ---------- Hero typing / boot effects (only if #hero exists) ---------- */
-    (function initHeroAnimations() {
+    /* ---------- Hero animations ---------- */
+    function startHeroAnimations() {
         const hero = document.getElementById('hero');
         if (!hero) return;
 
@@ -198,40 +208,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
         hero.classList.add('crt-boot-effect');
 
-        setTimeout(() => {
-            let delay = 0;
-            elementsToAnimate.forEach((element, index) => {
-                if (!element) { delay += 3000; return; }
-                setTimeout(() => {
-                    if (element.parentElement) element.parentElement.classList.remove('hidden-initial');
-                    element.classList.add('blinking-cursor');
-                    if (index === 0) {
-                        element.classList.add('typing-animation-name');
-                        element.parentElement?.classList.add('matrix-boot-up');
-                    } else {
-                        element.classList.add('typing-animation-line');
-                    }
+        let delay = 0;
+        elementsToAnimate.forEach((element, index) => {
+            if (!element) { delay += 1000; return; }
+            setTimeout(() => {
+                if (element.parentElement) element.parentElement.classList.remove('hidden-initial');
+                element.classList.add('blinking-cursor');
+                if (index === 0) {
+                    element.classList.add('typing-animation-name');
+                    element.parentElement?.classList.add('matrix-boot-up');
+                } else {
+                    element.classList.add('typing-animation-line');
+                }
 
-                    element.addEventListener('animationend', (event) => {
-                        if (event.animationName && event.animationName.includes('typing')) {
-                            element.classList.remove('blinking-cursor');
-                            if (index === elementsToAnimate.length - 1) {
+                element.addEventListener('animationend', (event) => {
+                    if (event.animationName && event.animationName.includes('typing')) {
+                        element.classList.remove('blinking-cursor');
+                        if (index === elementsToAnimate.length - 1) {
+                            setTimeout(() => {
+                                cehLine?.classList.remove('hidden-initial');
+                                cehLine?.classList.add('fade-in', 'matrix-boot-up');
                                 setTimeout(() => {
-                                    cehLine?.classList.remove('hidden-initial');
-                                    cehLine?.classList.add('fade-in', 'matrix-boot-up');
-                                    setTimeout(() => {
-                                        socialIcons?.classList.remove('hidden-initial');
-                                        socialIcons?.classList.add('fade-in');
-                                    }, 1000);
-                                }, 1000);
-                            }
+                                    socialIcons?.classList.remove('hidden-initial');
+                                    socialIcons?.classList.add('fade-in');
+                                }, 500);
+                            }, 500);
                         }
-                    }, { once: true });
-                }, delay);
-                delay += 3000;
-            });
-        }, 1000);
-    })();
+                    }
+                }, { once: true });
+            }, delay);
+            delay += 1000;
+        });
+    }
 
     /* ---------- About section typewriter (only if exists) ---------- */
     (function initAboutTypewriter() {
@@ -263,10 +271,9 @@ document.addEventListener('DOMContentLoaded', () => {
     
         observer.observe(aboutSection);
     })();
-    /* ---------- Matrix background (always try to init) ---------- */
-    (function initMatrix() {
+        /* ---------- Matrix background ---------- */
+    function initMatrix() {
         let canvas = document.getElementById('matrix-canvas');
-        let createdCanvas = false;
         if (!canvas) {
             canvas = document.createElement('canvas');
             canvas.id = 'matrix-canvas';
@@ -278,13 +285,12 @@ document.addEventListener('DOMContentLoaded', () => {
             canvas.style.zIndex = '-1';
             canvas.style.opacity = '0.5';
             document.body.insertBefore(canvas, document.body.firstChild);
-            createdCanvas = true;
         }
 
         const ctx = canvas.getContext && canvas.getContext('2d');
         if (!ctx) return;
 
-        const matrixChars = "アァイィウヴエェオカガキギクグケゲコゴサザシジスズセゼソゾタダチヂッツヅテデトドナニヌネノハバパヒビピフブプヘベペホボポマミムメモヤユヨラリルレロワンabcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890@#$%^&*()_+=-/[]{}|:;\"'<>,.?~`";
+        const matrixChars = "アァイィウヴエェオカガキギクグケゲコゴサザシジスズセゼソゾタダチヂッツヅテデトドナニヌネノハバパヒビピフブプヘベペホボポ마미무메모야유요라릴レロ원abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890@#$%^&*()_+=-/[]{}|:;\"'<>,.?~`";
         const fontSize = 12;
         let width = window.innerWidth;
         let height = window.innerHeight;
@@ -306,7 +312,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setCanvasSize();
 
         let lastTime = 0;
-        const minInterval = 35;
+        const minInterval = 50; 
 
         function frame(now) {
             requestAnimationFrame(frame);
@@ -336,83 +342,79 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('resize', debounce(() => {
             setCanvasSize();
         }, 150));
-    })();
+    }
 
-    // end DOMContentLoaded
+
+    
+    /* ---------- SECUENCIA DE ENCENDIDO CRT (Core) ---------- */
+    async function powerOn() {
+        const overlay = document.getElementById('crt-startup-overlay');
+        const terminalText = document.getElementById('startup-typing-text');
+        const cursor = document.getElementById('startup-cursor');
+
+        if (!overlay || !terminalText) return;
+
+        // 1. Fase de tecleado (1 segundo)
+        await typeWriterEffect(terminalText, "Establishing a connection...", 1000);
+        
+        // 2. Fase de espera (2 segundos adicionales para sumar los 3s)
+        await new Promise(r => setTimeout(r, 2000));
+
+        // 3. Fase de colapso visual
+        terminalText.style.display = 'none';
+        cursor.style.display = 'none';
+        overlay.classList.add('power-on-anim');
+
+        // 4. Revelar el sistema e iniciar componentes
+        setTimeout(() => {
+            overlay.style.opacity = '0';
+            setTimeout(() => {
+                overlay.style.display = 'none';
+                
+                // Iniciar motores visuales
+                initMatrix();
+                startHeroAnimations();
+                startAboutTypewriter();
+
+                // NOTA DE EDICIÓN: Registro de animación finalizada en la sesión
+                sessionStorage.setItem('crt_animation_played', 'true');
+            }, 300);
+        }, 1000);
+    }
+
+    // NOTA DE EDICIÓN: Comprobación de estado de sesión para ejecución única
+    const hasAnimationPlayed = sessionStorage.getItem('crt_animation_played');
+
+    if (!hasAnimationPlayed) {
+        // Ejecución normal (primera vez en la pestaña o ventana)
+        powerOn();
+    } else {
+        // NOTA DE EDICIÓN: Salto de animación si ya se reprodujo en esta sesión
+        const overlay = document.getElementById('crt-startup-overlay');
+        if (overlay) overlay.style.display = 'none';
+        
+        // Inicialización inmediata del contenido (ya no son IIFEs, se pueden llamar)
+        initMatrix();
+        startHeroAnimations();
+        startAboutTypewriter();
+    }
 
 });
 
 // JavaScript for icon movement 
 document.addEventListener('DOMContentLoaded', () => {
     const container = document.querySelector('.scroll-container');
-        if (container) {
-            // Cantidad de píxeles a desplazar en cada intervalo
-            const scrollAmount = 182; // (150px de la tarjeta + 32px del gap)
-            // Velocidad de desplazamiento en milisegundos
-            const scrollSpeed = 2000;
-
-        // Duplicamos el contenido para un bucle continuo
+    if (container) {
+        const scrollAmount = 182;
+        const scrollSpeed = 2000;
         const content = Array.from(container.children);
-        content.forEach(item => {
-            const clone = item.cloneNode(true);
-            container.appendChild(clone);
-        });
+        content.forEach(item => container.appendChild(item.cloneNode(true)));
 
-        // Función de desplazamiento
-            const startScroll = () => {
-            setInterval(() => {
-            // Desplazarse a la derecha
-                container.scrollBy({
-                    left: scrollAmount,
-                    behavior: 'smooth'
-        });
-
-        // Si el desplazamiento ha pasado la mitad del contenido (es decir, el final del original),
-        // reinicia la posición de forma instantánea para el bucle
-        if (container.scrollLeft >= container.scrollWidth / 2) {
-            container.scrollLeft = 0;
+        setInterval(() => {
+            container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            if (container.scrollLeft >= container.scrollWidth / 2) {
+                container.scrollLeft = 0;
             }
-            }, scrollSpeed);
-        };
-
-        startScroll();
+        }, scrollSpeed);
     }
-    
-            // EFECTO CRT ENCENDIDO (3 SEGUNDOS)
-            async function typeWriter(element, text, duration) {
-                element.textContent = "";
-                const delay = duration / text.length;
-                for (const char of text) {
-                    element.textContent += char;
-                    await new Promise(r => setTimeout(r, delay));
-                }
-            }
-
-            async function powerOn() {
-                const overlay = document.getElementById('crt-startup-overlay');
-                const textEl = document.getElementById('startup-typing-text');
-                const cursor = document.getElementById('startup-cursor');
-
-                // Tecleo del mensaje (1s)
-                await typeWriter(textEl, "Estableciendo enlace...", 1000);
-                
-                // Pausa (2s) para completar los 3s
-                await new Promise(r => setTimeout(r, 2000));
-
-                // Animación física del monitor
-                textEl.style.display = 'none';
-                cursor.style.display = 'none';
-                overlay.classList.add('power-on-anim');
-
-                setTimeout(() => {
-                    overlay.style.opacity = '0';
-                    setTimeout(() => {
-                        overlay.style.display = 'none';
-                        initMatrix();
-                        startHeroAnimations();
-                        startAboutTypewriter();
-                    }, 300);
-                }, 1000);
-            }
-    });
-
+});
