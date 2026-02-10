@@ -173,7 +173,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (!toggleButton || hiddenInsignias.length === 0) return;
 
-        // Se usa texto fijo en español
+        // Button text on English
         toggleButton.textContent = 'See All';
 
         toggleButton.addEventListener('click', () => {
@@ -418,4 +418,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }, scrollSpeed);
     }
 });
+
 
