@@ -21,7 +21,9 @@
             scroll-behavior: smooth;
         }
 
-    ========================================= */
+        /* =========================================
+           ESTILOS ADICIONALES PARA CRT Y SPA
+           ========================================= */
         #crt-startup-overlay {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -73,6 +75,13 @@
             from, to { opacity: 1; }
             50% { opacity: 0; }
         }
+
+        /* Lógica visual de secciones SPA */
+        .spa-section { display: none; }
+        .spa-section.active { display: block; animation: sectionFadeIn 0.5s ease; }
+        @keyframes sectionFadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        .hidden-initial { visibility: hidden; opacity: 0; }
 
         .section-separator {
             content: '';
@@ -1660,4 +1669,5 @@
     }
   }
 }
+
 
