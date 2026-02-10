@@ -377,4 +377,42 @@ document.addEventListener('DOMContentLoaded', () => {
 
         startScroll();
     }
+    
+            // EFECTO CRT ENCENDIDO (3 SEGUNDOS)
+            async function typeWriter(element, text, duration) {
+                element.textContent = "";
+                const delay = duration / text.length;
+                for (const char of text) {
+                    element.textContent += char;
+                    await new Promise(r => setTimeout(r, delay));
+                }
+            }
+
+            async function powerOn() {
+                const overlay = document.getElementById('crt-startup-overlay');
+                const textEl = document.getElementById('startup-typing-text');
+                const cursor = document.getElementById('startup-cursor');
+
+                // Tecleo del mensaje (1s)
+                await typeWriter(textEl, "Estableciendo enlace...", 1000);
+                
+                // Pausa (2s) para completar los 3s
+                await new Promise(r => setTimeout(r, 2000));
+
+                // Animación física del monitor
+                textEl.style.display = 'none';
+                cursor.style.display = 'none';
+                overlay.classList.add('power-on-anim');
+
+                setTimeout(() => {
+                    overlay.style.opacity = '0';
+                    setTimeout(() => {
+                        overlay.style.display = 'none';
+                        initMatrix();
+                        startHeroAnimations();
+                        startAboutTypewriter();
+                    }, 300);
+                }, 1000);
+            }
     });
+
