@@ -242,7 +242,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* ---------- About section typewriter (only if exists) ---------- */
-    (function initAboutTypewriter() {
+    (function startAboutTypewriter() {
         const aboutTextElement = document.getElementById('about-text');
         const aboutSection = document.getElementById('about');
         if (!aboutTextElement || !aboutSection) return;
@@ -418,3 +418,4 @@ document.addEventListener('DOMContentLoaded', () => {
         }, scrollSpeed);
     }
 });
+
