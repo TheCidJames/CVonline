@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
             t = setTimeout(() => fn(...args), wait);
         };
     }
+
     // Función auxiliar para el efecto de tecleado en la carga
     async function typeWriterEffect(element, text, duration) {
         if (!element) return;
@@ -31,12 +32,12 @@ document.addEventListener('DOMContentLoaded', () => {
             await new Promise(r => setTimeout(r, charDelay));
         }
     }
-    
-    /* ---------- Ensure placeholders exist (so file works on any page) ---------- */
+
+    /* ---------- Ensure placeholders exist ---------- */
     ensurePlaceholder('main-header');
     ensurePlaceholder('main-footer');
 
-    /* ---------- Header & Footer (creación e inyección) ---------- */
+    /* ---------- Header & Footer ---------- */
     function createHeader() {
         const headerHTML = `
 <header class="fixed w-full top-0 z-50 neon-header">
@@ -119,16 +120,16 @@ document.addEventListener('DOMContentLoaded', () => {
             <footer class="bg-gray-950/80 backdrop-blur-sm text-center py-8 relative z-10">
                 <div class="flex justify-center space-x-4 mb-4">
                     <a href="mailto:yapura.luis@proton.me" target="_blank" class="text-green-400 hover:text-green-200 transition-colors" aria-label="eMail">
-                        <i class="fa-solid fa-envelope text-3xl"></i>
+                        <i class="fa-solid fa-envelope text-2xl"></i>
                     </a>
                     <a href="https://wa.me/+543512541007" target="_blank" class="text-green-400 hover:text-green-200 transition-colors" aria-label="WhatsApp">
-                        <i class="fa-brands fa-whatsapp text-3xl"></i>
+                        <i class="fa-brands fa-whatsapp text-2xl"></i>
                     </a>
                     <a href="https://linkedin.com/in/luis-yapura" target="_blank" class="text-green-400 hover:text-green-200 transition-colors" aria-label="LinkedIn">
-                        <i class="fa-brands fa-linkedin-in text-3xl"></i>
+                        <i class="fa-brands fa-linkedin-in text-2xl"></i>
                     </a>
                     <a href="https://github.com/thecidjames" target="_blank" class="text-green-400 hover:text-green-200 transition-colors" aria-label="GitHub">
-                        <i class="fa-brands fa-github text-3xl"></i>
+                        <i class="fa-brands fa-github text-2xl"></i>
                     </a>
                 </div>
                 <p class="text-gray-500 text-sm">
@@ -145,53 +146,43 @@ document.addEventListener('DOMContentLoaded', () => {
     createHeader();
     createFooter();
 
-    /* ---------- Header interactions ---------- */
-    (function initHeaderInteractions() {
-        const hamburgerBtn = document.getElementById('hamburger-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const mobileCvBtn = document.getElementById('mobile-cv-toggle-btn');
-        const mobileCvDropdown = document.getElementById('mobile-cv-dropdown');
+    
+    /* ---------- Interactions ---------- */
+    const hamburgerBtn = document.getElementById('hamburger-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileCvBtn = document.getElementById('mobile-cv-toggle-btn');
+    const mobileCvDropdown = document.getElementById('mobile-cv-dropdown');
 
-        if (hamburgerBtn && mobileMenu) {
-            hamburgerBtn.addEventListener('click', () => {
-                mobileMenu.classList.toggle('-translate-x-full');
-            });
-        }
+    if (hamburgerBtn && mobileMenu) {
+        hamburgerBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('-translate-x-full');
+        });
+    }
 
-        // Toggle para el menú del CV en móvil
-        if (mobileCvBtn && mobileCvDropdown) {
-            mobileCvBtn.addEventListener('click', () => {
-                mobileCvDropdown.classList.toggle('hidden');
-            });
-        }
-    })();
+    if (mobileCvBtn && mobileCvDropdown) {
+        mobileCvBtn.addEventListener('click', () => {
+            mobileCvDropdown.classList.toggle('hidden');
+        });
+    }
 
     /* ---------- Insignias collapse ---------- */
-    (function initInsigniasToggle() {
-        const toggleButton = document.getElementById('toggle-insignias-btn');
-        const hiddenInsignias = document.querySelectorAll('.collapsible-insignia');
+    const toggleButton = document.getElementById('toggle-insignias-btn');
+    const hiddenInsignias = document.querySelectorAll('.collapsible-insignia');
 
-        if (!toggleButton || hiddenInsignias.length === 0) return;
-
-        // Button text on English
-        toggleButton.textContent = 'See All';
-
+    if (toggleButton && hiddenInsignias.length > 0) {
+        toggleButton.textContent = 'Ver más';
         toggleButton.addEventListener('click', () => {
             const isExpanded = toggleButton.classList.contains('expanded');
-
-            hiddenInsignias.forEach(insignia => {
-                insignia.classList.toggle('hidden');
-            });
-
+            hiddenInsignias.forEach(insignia => insignia.classList.toggle('hidden'));
             if (!isExpanded) {
                 toggleButton.classList.add('expanded');
-                toggleButton.textContent = 'See Less';
+                toggleButton.textContent = 'Ver menos';
             } else {
                 toggleButton.classList.remove('expanded');
-                toggleButton.textContent = 'See All';
+                toggleButton.textContent = 'Ver más';
             }
         });
-    })();
+    }
 
     /* ---------- Hero animations ---------- */
     function startHeroAnimations() {
@@ -241,13 +232,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    /* ---------- About section typewriter (only if exists) ---------- */
-    (function startAboutTypewriter() {
+    /* ---------- About section typewriter ---------- */
+    function startAboutTypewriter() {
         const aboutTextElement = document.getElementById('about-text');
         const aboutSection = document.getElementById('about');
         if (!aboutTextElement || !aboutSection) return;
             const text = 'Systems analyst and cybersecurity specialist with experience in ethical hacking, security audits, and administration of systems and databases. Demonstrated competence in Linux and Windows environments, virtualization, and ERP systems. Passionate about identifying and mitigating vulnerabilities, incident response, and technical training. I seek to apply my knowledge and passion for technology to contribute to innovative projects in the field of cybersecurity, which is why I am currently training in an International Master\'s in Cybersecurity from the International Cybersecurity Campus and the Catholic University San Antonio de Murcia in Spain.';    
-        function typeWriter(element, text, i = 0) {
+        
+		 function typeWriter(element, text, i = 0) {
             if (!element.classList.contains('typing-container')) {
                 element.classList.add('typing-container');
             }
@@ -270,8 +262,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }, { threshold: 0.5 });
     
         observer.observe(aboutSection);
-    })();
-        /* ---------- Matrix background ---------- */
+    }
+    
+    /* ---------- Matrix background ---------- */
     function initMatrix() {
         let canvas = document.getElementById('matrix-canvas');
         if (!canvas) {
@@ -401,7 +394,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-// JavaScript for icon movement 
+// Carrusel de íconos
 document.addEventListener('DOMContentLoaded', () => {
     const container = document.querySelector('.scroll-container');
     if (container) {
@@ -418,5 +411,3 @@ document.addEventListener('DOMContentLoaded', () => {
         }, scrollSpeed);
     }
 });
-
-
